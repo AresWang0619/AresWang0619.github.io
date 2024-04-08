@@ -67,24 +67,24 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: ''
-          date_end: ''
+          date_start: '0001-01-01'
+          date_end: '0001-01-01'
           description: 对抗样本，进化算法。
         - title: 中国人民大学数据工程与知识工程教育部重点实验室 
           company: 客座学生
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: ''
-          date_end: ''
+          date_start: '0001-01-01'
+          date_end: '0001-01-01'
           description: 参与实验室科研项目：基于 In-Context Learning +U-net 的跨域轻量级眼底血管分割模型。
         - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: ''
-          date_end: ''
+          date_start: '0001-01-01'
+          date_end: '0001-01-01'
           description: |2-
               Responsibilities include:
 
