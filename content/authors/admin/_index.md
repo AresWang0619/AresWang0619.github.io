@@ -93,7 +93,8 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:YimingWang0619@gmail.com'
-  - icon: custom/phone
+  - icon: weixin
+    icon_pack: fab
     link: '#'
     label: 微信号：wang1468617159
     display:
@@ -106,8 +107,8 @@ social:
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
-  - icon: cv
-    icon_pack: ai
+  - icon: file-alt
+    icon_pack: fas
     label: Down load my resume here.
     link: uploads/resume.pdf
 
