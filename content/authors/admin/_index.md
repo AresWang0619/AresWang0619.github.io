@@ -95,10 +95,9 @@ social:
     link: 'mailto:YimingWang0619@gmail.com'
   - icon: weixin
     icon_pack: fab
-    link: '#'
     label: 微信号：wang1468617159
-    # display:
-    #   header: true
+    display:
+      header: true
   - icon: phone # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     label: Call me
