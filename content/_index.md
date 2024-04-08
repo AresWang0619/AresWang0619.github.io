@@ -69,7 +69,7 @@ sections:
           location: Beijing
           date_start: ''
           date_end: ''
-          description: '对抗样本，进化算法。'
+          description: 对抗样本，进化算法。
       - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
