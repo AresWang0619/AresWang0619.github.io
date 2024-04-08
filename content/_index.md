@@ -62,27 +62,35 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: CEO
-          company: GenCoin
+        - title: 大规模流数据集成与分析北京市重点实验室 
+          company: 客座学生
           company_url: ''
           company_logo: org-gc
-          location: California
-          date_start: '2021-01-01'
+          location: Beijing
+          date_start: ''
+          date_end: ''
+          description: '对抗样本，进化算法。'
+      - title:  国家级大创
+          company: 智能助老服务机器人的研究与实现 | 第二负责人
+          company_url: ''
+          company_logo: org-gc
+          location: Beijing
+          date_start: ''
           date_end: ''
           description: |2-
               Responsibilities include:
 
-              * Analysing
-              * Modelling
-              * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
+              * 中文大数据系统数据置信度评估
+              * 人体姿态识别
+              * 大模型人类对齐
+        - title: 中国人民大学数据工程与知识工程教育部重点实验室 
+          company: 客座学生
           company_url: ''
-          company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          company_logo: org-gc
+          location: Beijing
+          date_start: ''
+          date_end: ''
+          description: 参与实验室科研项目：基于 In-Context Learning +U-net 的跨域轻量级眼底血管分割模型。
     design:
       columns: '2'
   - block: accomplishments

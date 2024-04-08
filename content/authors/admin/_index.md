@@ -35,7 +35,7 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: Undergraduate student major in AI.
+    - course: Undergraduate student major in AI
       institution: North China University of Technology.
       year: 2021-2025
     # - course: MEng in Artificial Intelligence
@@ -93,7 +93,7 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:YimingWang0619@gmail.com'
-  - icon: brands/phone
+  - icon: custom/phone
     link: '#'
     label: 微信号：wang1468617159
     display:
