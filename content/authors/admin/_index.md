@@ -93,7 +93,7 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:YimingWang0619@gmail.com'
-  - icon: brand/phone
+  - icon: brands/phone
     link: '#'
     label: 微信号：wang1468617159
     display:
