@@ -35,8 +35,8 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: Undergraduate student at the NNCUT, junior
-      institution: NCUT
+    - course: Undergraduate student major in AI.
+      institution: North China University of Technology.
       year: 2021-2025
     # - course: MEng in Artificial Intelligence
     #   institution: Massachusetts Institute of Technology
@@ -60,11 +60,11 @@ skills:
         percent: 90
         icon: chart-line
         icon_pack: fas
-      # - name: SQL
-      #   description: ''
-      #   percent: 40
-      #   icon: database
-      #   icon_pack: fas
+      - name: English
+        description: ''
+        percent: 90
+        icon: database
+        icon_pack: fas
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -93,14 +93,14 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:YimingWang0619@gmail.com'
-  - icon: twitter
-    icon_pack: fab
+  - icon: brand/phone
     link: '#'
     label: 微信号：wang1468617159
     display:
       header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
+    label: Call me
     link: 'tel:18350472267'
   
   # Link to a PDF of your resume/CV.
@@ -108,11 +108,12 @@ social:
   # and uncomment the lines below.
   - icon: cv
     icon_pack: ai
+    label: Down load my resume here.
     link: uploads/resume.pdf
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Hi ! Welcome to my spot!
+Hi ! Welcome to my Blog!This is my secret base, come on in.
 {style="text-align: justify;"}
