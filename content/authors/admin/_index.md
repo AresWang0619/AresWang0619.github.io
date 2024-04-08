@@ -95,7 +95,7 @@ social:
     link: 'mailto:YimingWang0619@gmail.com'
   - icon: twitter
     icon_pack: fab
-     link: '#'
+    link: '#'
     label: 微信号：wang1468617159
     display:
       header: true
