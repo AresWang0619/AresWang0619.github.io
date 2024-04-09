@@ -111,6 +111,7 @@ sections:
           date_start: '2023-05-01'
           description: ''
           icon: fa-trophy
+          icon_pack: fas
           # organization: Coursera
           # organization_url: https://www.coursera.org
           title: 全国大学生英语竞赛 | 全国二等奖
@@ -120,6 +121,7 @@ sections:
           date_start: '2023-06-01'
           description: ''
           icon: fa-trophy
+          icon_pack: fas
           # organization: edX
           # organization_url: https://www.edx.org
           title: 中国人工智能及智能大赛 | 全国二等奖
@@ -129,6 +131,7 @@ sections:
           date_start: '2023-05-01'
           description: ''
           icon: fa-trophy
+          icon_pack: fas
           # organization: DataCamp
           # organization_url: https://www.datacamp.com
           title: '中国人工智能及智能大赛 | 北京市一等奖'
