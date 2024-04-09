@@ -42,14 +42,7 @@ sections:
       title: Biography
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-  - block: skills
-    content:
-      title: Skills
-      text: ''
-      # Choose a user to display skills from (a folder name within `content/authors/`)
-      username: admin
-    design:
-      columns: '1'
+  
   - block: experience
     content:
       title: Experience
@@ -93,6 +86,20 @@ sections:
               * 大模型人类对齐
     design:
       columns: '2'
+  - block: collection
+    content:
+      title: Recent Publications
+      text: |-
+        {{% callout note %}}
+        Quickly discover relevant content by [filtering publications](./publication/).
+        {{% /callout %}}
+      filters:
+        folders:
+          - publication
+        exclude_featured: true
+    design:
+      columns: '2'
+      view: citation
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
@@ -110,7 +117,7 @@ sections:
           date_end: '2023-05-02'
           date_start: '2023-05-01'
           description: ''
-          icon: fa-trophy
+          icon: trophy
           icon_pack: fas
           # organization: Coursera
           # organization_url: https://www.coursera.org
@@ -120,7 +127,7 @@ sections:
           date_end: '2023-06-02'
           date_start: '2023-06-01'
           description: ''
-          icon: fa-trophy
+          icon: trophy
           icon_pack: fas
           # organization: edX
           # organization_url: https://www.edx.org
@@ -130,7 +137,7 @@ sections:
           date_end: '2023-05-02'
           date_start: '2023-05-01'
           description: ''
-          icon: fa-trophy
+          icon: trophy
           icon_pack: fas
           # organization: DataCamp
           # organization_url: https://www.datacamp.com
@@ -192,6 +199,14 @@ sections:
   #     view: showcase
   #     # For Showcase view, flip alternate rows?
   #     flip_alt_rows: false
+  - block: skills
+    content:
+      title: Skills
+      text: ''
+      # Choose a user to display skills from (a folder name within `content/authors/`)
+      username: admin
+    design:
+      columns: '1'
   - block: markdown
     content:
       title: Gallery
@@ -211,20 +226,7 @@ sections:
   #   design:
   #     columns: '2'
   #     view: card
-  - block: collection
-    content:
-      title: Recent Publications
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](./publication/).
-        {{% /callout %}}
-      filters:
-        folders:
-          - publication
-        exclude_featured: true
-    design:
-      columns: '2'
-      view: citation
+  
   - block: collection
     id: talks
     content:
