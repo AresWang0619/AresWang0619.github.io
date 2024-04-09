@@ -207,7 +207,7 @@ sections:
       username: admin
     design:
       columns: '1'
-    - block: collection
+  - block: collection
     id: talks
     content:
       title: Recent & Upcoming Talks
