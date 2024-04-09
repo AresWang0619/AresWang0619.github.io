@@ -107,8 +107,8 @@ sections:
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
         - certificate_url: ''
-          date_end: ''
-          date_start: ''
+          date_end: '2023-05-02'
+          date_start: '2023-05-01'
           description: ''
           icon: fa-trophy
           # organization: Coursera
@@ -116,8 +116,8 @@ sections:
           title: 全国大学生英语竞赛 | 全国二等奖
           url: ''
         - certificate_url: ''
-          date_end: ''
-          date_start: ''
+          date_end: '2023-06-02'
+          date_start: '2023-06-01'
           description: ''
           icon: fa-trophy
           # organization: edX
@@ -125,8 +125,8 @@ sections:
           title: 中国人工智能及智能大赛 | 全国二等奖
           url: ''
         - certificate_url: ''
-          date_end: ''
-          date_start: ''
+          date_end: '2023-05-02'
+          date_start: '2023-05-01'
           description: ''
           icon: fa-trophy
           # organization: DataCamp

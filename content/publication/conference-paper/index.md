@@ -1,6 +1,5 @@
 ---
-title: 'Reasoning with Large Language Models on Graph Tasks: The
-Influence of Temperature'
+title: 'Reasoning with Large Language Models on Graph Tasks: The Influence of Temperature'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -17,7 +16,7 @@ authors:
 #   - 'Equal contribution'
 
 date: '2024-04-09T00:00:00Z'
-doi: ''
+# doi: ''
 
 # Schedule page publish date (NOT publication's date).
 # publishDate: '2017-01-01T00:00:00Z'
@@ -25,7 +24,7 @@ doi: ''
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['EI-conference']
+# publication_types: ['EI-conference']
 
 # Publication name and optional abbreviated publication name.
 # publication: In *Hugo Blox Builder Conference*
@@ -36,7 +35,7 @@ abstract: Large language models (LLMs) have garnered significant attention due t
 # Summary. An optional shortened abstract.
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
-tags: [LLMs]
+# tags: [LLMs]
 
 # Display this page in the Featured widget?
 # featured: true
