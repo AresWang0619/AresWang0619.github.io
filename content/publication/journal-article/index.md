@@ -36,7 +36,7 @@ abstract: Adversarial attack for time-series classification model is widely expl
 # links:
 # - name: ""
 # #   url: ""
-# url_pdf: http://arxiv.org/pdf/1512.04133v1
+url_pdf: uploads/attact_based_on_data.pdf
 # url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
 # url_dataset: ''
 # url_poster: ''
