@@ -29,13 +29,13 @@ bio: Hi! My name is Wang Yiming. I'm currently a studen in NCUT major in AI.
 # Interests to show in About widget
 interests:
   - Deep Learning
-  - Travel
+  - LLMs
   - Photography
 
 # Education to show in About widget
 education:
   courses:
-    - course: Undergraduate student major in AI
+    - course: Undergraduate student majoring in AI
       institution: North China University of Technology.
       year: 2021-2025
     # - course: MEng in Artificial Intelligence
@@ -96,7 +96,7 @@ social:
   - icon: weixin
     icon_pack: fab
     label: 微信号：wang1468617159
-    link: ''
+    link: 'uploads/qrcode.pdf'
     display:
       header: true
     title: 微信号：wang1468617159
@@ -117,5 +117,5 @@ social:
 highlight_name: true
 ---
 
-Hi ! Welcome to my Blog!This is my secret base, come on in.
+Hi ! Welcome to my corner of the internet! I'm Ares, students who is currently majoring in AI and I am interested in deep learning and LLMs. Here, you'll find a kaleidoscope of my life ranging from the whimsical to the profound.So grab a cup of your favorite beverage, get comfy, and join me on this journey of exploration and laughter. Who knows? You might just find that spark of inspiration you've been looking for!
 {style="text-align: justify;"}
