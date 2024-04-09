@@ -67,24 +67,24 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: '0001-01-01'
-          date_end: '0001-01-01'
+          date_start: '2022-09-01'
+          date_end: '2023-03-01'
           description: 对抗样本，进化算法。
         - title: 中国人民大学数据工程与知识工程教育部重点实验室 
           company: 客座学生
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: '0001-01-01'
-          date_end: '0001-01-01'
+          date_start: '2024-02-15'
+          date_end: '2024-04-09'
           description: 参与实验室科研项目：基于 In-Context Learning +U-net 的跨域轻量级眼底血管分割模型。
         - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: '0001-01-01'
-          date_end: '0001-01-01'
+          date_start: '2023-4-01'
+          date_end: '2024-02-25'
           description: |2-
               Responsibilities include:
 
@@ -106,31 +106,31 @@ sections:
       #   Leave other parameters empty if not required.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - certificate_url: https://www.coursera.org
+        - certificate_url: ''
           date_end: ''
-          date_start: '2021-01-25'
+          date_start: ''
           description: ''
-          icon: coursera
-          organization: Coursera
-          organization_url: https://www.coursera.org
+          icon: fa-trophy
+          # organization: Coursera
+          # organization_url: https://www.coursera.org
           title: 全国大学生英语竞赛 | 全国二等奖
           url: ''
-        - certificate_url: https://www.edx.org
+        - certificate_url: ''
           date_end: ''
-          date_start: '2021-01-01'
-          description: Formulated informed blockchain models, hypotheses, and use cases.
-          icon: edx
-          organization: edX
-          organization_url: https://www.edx.org
+          date_start: ''
+          description: ''
+          icon: fa-trophy
+          # organization: edX
+          # organization_url: https://www.edx.org
           title: 中国人工智能及智能大赛 | 全国二等奖
           url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-        - certificate_url: https://www.datacamp.com
-          date_end: '2020-12-21'
-          date_start: '2020-07-01'
+        - certificate_url: ''
+          date_end: ''
+          date_start: ''
           description: ''
-          icon: datacamp
-          organization: DataCamp
-          organization_url: https://www.datacamp.com
+          icon: fa-trophy
+          # organization: DataCamp
+          # organization_url: https://www.datacamp.com
           title: '中国人工智能及智能大赛 | 北京市一等奖'
           url: ''
     design:
