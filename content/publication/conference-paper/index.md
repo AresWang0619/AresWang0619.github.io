@@ -39,7 +39,7 @@ abstract: Large language models (LLMs) have garnered significant attention due t
 tags: [LLMs]
 
 # Display this page in the Featured widget?
-featured: true
+# featured: true
 
 # Custom links (uncomment lines below)
 # links:

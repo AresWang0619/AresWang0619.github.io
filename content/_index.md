@@ -83,7 +83,7 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: Beijing
-          date_start: '2023-4-01'
+          date_start: '2023-04-01'
           date_end: '2024-02-25'
           description: |2-
               Responsibilities include:
@@ -123,7 +123,7 @@ sections:
           # organization: edX
           # organization_url: https://www.edx.org
           title: 中国人工智能及智能大赛 | 全国二等奖
-          url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+          url: ''
         - certificate_url: ''
           date_end: ''
           date_start: ''
