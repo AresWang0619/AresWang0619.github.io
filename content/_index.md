@@ -117,7 +117,7 @@ sections:
           date_end: '2023-05-02'
           date_start: '2023-05-01'
           description: ''
-          icon: trophy
+          icon: medal
           icon_pack: fas
           # organization: Coursera
           # organization_url: https://www.coursera.org
@@ -127,7 +127,7 @@ sections:
           date_end: '2023-06-02'
           date_start: '2023-06-01'
           description: ''
-          icon: trophy
+          icon: medal
           icon_pack: fas
           # organization: edX
           # organization_url: https://www.edx.org
@@ -207,6 +207,21 @@ sections:
       username: admin
     design:
       columns: '1'
+    - block: collection
+    id: talks
+    content:
+      title: Recent & Upcoming Talks
+      filters:
+        folders:
+          - event
+    design:
+      columns: '2'
+      view: compact
+  - block: tag_cloud
+    content:
+      title: Popular Topics
+    design:
+      columns: '2'
   - block: markdown
     content:
       title: Gallery
@@ -227,21 +242,7 @@ sections:
   #     columns: '2'
   #     view: card
   
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - event
-    design:
-      columns: '2'
-      view: compact
-  - block: tag_cloud
-    content:
-      title: Popular Topics
-    design:
-      columns: '2'
+
   # - block: contact
   #   id: contact
   #   content:
