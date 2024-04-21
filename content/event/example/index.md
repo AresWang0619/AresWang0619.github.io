@@ -94,5 +94,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >
   > *相关例题：*
   > 空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
+
+
 - **二分算法**
-  > 寻找合适的区间
+  > 在区间[l,r]间逼近一个数字：（1）mid超出区间，则区间在
