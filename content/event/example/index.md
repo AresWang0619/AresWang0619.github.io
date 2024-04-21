@@ -72,10 +72,12 @@ Slides can be added in a few ways:
 
 Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
 
-- **区间更新:差分算法**
-  > 适用于一个区间都要加上/减去一个固定的数字。
+<h2 style="font-size: 24px;">差分算法</h2>
+  > **应用场景：**适用于一个区间都要加上/减去一个固定的数字。
+  > **原理：**
   >
-  > 构建差分数组（构建的时候记得开辟数组空间-> `memset(b,0,size of b);`）
+  >
+  > Key part:构建差分数组（构建的时候记得开辟数组空间-> `memset(b,0,size of b);`）
   >
   > ```cpp
   > for(int i=1;i<=n;i++){
