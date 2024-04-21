@@ -71,18 +71,16 @@ Slides can be added in a few ways:
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://docs.hugoblox.com/reference/markdown/).
 
 Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
-
-
 - **差分算法**
-适用于一个区间都要加上/减去一个固定的数字
-1.构建差分数组（构建的时候记得开辟数组空间-> memset(b,0,size of b);）
+  - 适用于一个区间都要加上/减去一个固定的数字。
+  - 构建差分数组（构建的时候记得开辟数组空间-> `memset(b,0,size of b);`）
 
-模板：
-for(int i=1;i<=n;i++){
-  b[s]=b[s]+d;
-  b[t+1]=b[t+1]-d;
-}
-
+    ```cpp
+    for(int i=1;i<=n;i++){
+      b[s[i]]=b[s[i]]+d;
+      b[t[i]+1]=b[t[i]+1]-d;
+    }
+    ```
 
 - **二分算法**
-寻找合适的区间
+  - 寻找合适的区间
