@@ -1,5 +1,5 @@
 ---
-title: Algorithms Learning 
+title: Algorithm Learning 
 
 # event: 
 event_url: https://leetcode.cn/u/ares-na4/
@@ -24,7 +24,7 @@ date: '2024-04-21T21:25:00Z'
 # Schedule page publish date (NOT talk date).
 # publishDate: '2021-07-01T00:00:00Z'
 
-authors: []
+authors: [Ares]
 tags: []
 
 # Is this a featured talk? (true/false)
@@ -85,7 +85,14 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >   b[t[i]+1]=b[t[i]+1]-d;
   > }
   > ```
-  ps:如果是从原数组直接构建差分数组，需要进行d
-
+  > ps:如果是从原数组直接构建差分数组，for循环要倒序，否则构建会错误
+  > ```cpp
+  > for(int i=n+1;i>=1;i--){
+  >   b[i]=b[i]-b[i]-1;
+  > }
+  > ``
+  >
+  > *相关例题：*
+  > 空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
 - **二分算法**
   > 寻找合适的区间
