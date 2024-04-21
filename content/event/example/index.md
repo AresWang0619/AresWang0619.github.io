@@ -85,7 +85,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >   b[t[i]+1]=b[t[i]+1]-d;
   > }
   > ```
-  > ps:如果是从原数组直接构建差分数组，for循环要倒序，否则构建会错误
+  > ps:如果是从原数组直接构建差分数组，for循环要倒序，否则构建会错误。
   > ```cpp
   > for(int i=n+1;i>=1;i--){
   >   b[i]=b[i]-b[i]-1;
