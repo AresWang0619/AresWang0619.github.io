@@ -18,8 +18,8 @@ abstract: '一些算法学习小tips'
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 # date: '2021-07-01T13:00:00Z'
-date_end: ''
-all_day: false
+# date_end: ''
+# all_day: false
 
 # Schedule page publish date (NOT talk date).
 # publishDate: '2021-07-01T00:00:00Z'
@@ -71,16 +71,18 @@ Slides can be added in a few ways:
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://docs.hugoblox.com/reference/markdown/).
 
 Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
-- **差分算法**
-  - 适用于一个区间都要加上/减去一个固定的数字。
-  - 构建差分数组（构建的时候记得开辟数组空间-> `memset(b,0,size of b);`）
 
-    ```cpp
-    for(int i=1;i<=n;i++){
-      b[s[i]]=b[s[i]]+d;
-      b[t[i]+1]=b[t[i]+1]-d;
-    }
-    ```
+- **区间更新:差分算法**
+  > 适用于一个区间都要加上/减去一个固定的数字。
+  >
+  > 构建差分数组（构建的时候记得开辟数组空间-> `memset(b,0,size of b);`）
+  >
+  > ```cpp
+  > for(int i=1;i<=n;i++){
+  >    b[s[i]]=b[s[i]]+d;
+  >    b[t[i]+1]=b[t[i]+1]-d;
+  >  }
+  > ```
 
 - **二分算法**
-  - 寻找合适的区间
+  > 寻找合适的区间
