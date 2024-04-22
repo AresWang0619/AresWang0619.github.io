@@ -92,11 +92,31 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > for(int i=n+1;i>=1;i--){
   >   b[i]=b[i]-b[i]-1;
   > }
-  > ``
+  > ```
   >
   > <u>*相关例题：*</u> 
   > 空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
 
 
+
 - **二分算法**
-  > 在区间[l,r]间逼近一个数字：（1）mid超出区间，则区间在
+  > |--------|--------|--------|--------|
+  > |        |        |        |        |
+  > l               mid                 r
+  > 在区间 $[l, r]$ 间逼近一个数字：
+  > 
+  > 1. 如果 mid 超出区间，则区间在 $[l, \text{mid}]$；
+  > 2. 如果 mid 不会超出区间，则区间在 $[\text{mid}+1, r]$。
+  > 
+  > 直到区间内只剩一个数，结束迭代。
+  >
+  > **Key part:**
+  > ```cpp
+  > int l=0,r=n;
+  > while(l<n){
+  >   int mid=l+r+1>>1;
+  >   if(check(mid)) l=mid;
+  >   else r=mid-1;
+  > }
+  > return r;
+  > ```
