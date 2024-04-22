@@ -82,7 +82,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 由于要对区间as到at之间的a,每个都要加d,对于b相当于只有bs加了d，bt+1多减去了d,而其余b的大小不变。将区间变化转化为只对新建的b数组中的两 
   > 个数字做变化。
   >
-  > **Key part:**构建差分数组（构建前记得开辟数组空间： `memset(b,0,size of b);`）
+  > **Key part:**构建差分数组（构建前记得开辟数组空间： `memset(b,0,sizeof(b));`）
   > ```cpp
   > for(int i=1;i<=n;i++){
   >   b[s[i]]=b[s[i]]+d;
@@ -92,7 +92,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > ps:如果是从原数组直接构建差分数组，for循环要倒序，否则构建会错误。
   > ```cpp
   > for(int i=n+1;i>=1;i--){
-  >   b[i]=b[i]-b[i]-1;
+  >   b[i]=b[i]-b[i-1];
   > }
   > ```
   >
