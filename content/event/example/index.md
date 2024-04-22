@@ -71,7 +71,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 
 
   > 所以a_1=b_1,a_2=b_1+b_2,a_3=b_1+b_2+b_3...a_n=a_1+a_2+...+a_n
-  > 由于要对区间a_s到a_t之间的a,每个都要加d,对于b相当于只有b_s加了d，b_{t+1}多减去了d,而其余b的大小不变。将区间变化转化为只对新建的b数组中的两 
+  > 由于要对区间 a_s 到 a_t 之间的 a ,每个都要加 d ,对于 b 相当于只有 b_s 加了 d，b_t+1 多减去了 d ,而其余 b 的大小不变。将区间变化转化为只对新建的b数组中的两 
   > 个数字做变化。
   >
   > **Key part:**
