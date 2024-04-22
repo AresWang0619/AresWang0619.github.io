@@ -73,13 +73,14 @@ Slides can be added in a few ways:
 Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
 
 - **区间更新:差分算法**
-  > *适用场景：* 适用于一个区间都要加上/减去一个固定的数字。
-  > *原理：*  
+  > <u>*适用场景：*</u>  适用于一个区间都要加上/减去一个固定的数字。
+  >
+  > <u>*原理：*</u> 
   记 $a_0=0$, $b_1=a_1=a_0$, $b_2=a_2-a_1$，依此类推，$b_s=a_s-a_{s-1}$，$b_x=a_x-a_{x-1}$，$b_{t+1}=a_{t+1}-a_t$，$b_n=a_n-a_{n-1}$
   所以a1=b1,a2=b1+b2,a3=b1+b2+b3...an=a1+a2+...+an
   由于要对区间as到at之间的a,每个都要加d,对于b相当于只有bs加了d，bt+1多减去了d,而其余b的大小不变。将区间变化转化为只对新建的b数组中的两个数字做变化。
-
-  > 构建差分数组（构建前记得开辟数组空间： `memset(b,0,size of b);`）
+  >
+  > **Key part:**构建差分数组（构建前记得开辟数组空间： `memset(b,0,size of b);`）
   > ```cpp
   > for(int i=1;i<=n;i++){
   >   b[s[i]]=b[s[i]]+d;
@@ -93,7 +94,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > }
   > ``
   >
-  > *相关例题：*
+  > <u>*相关例题：*</u> 
   > 空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
 
 
