@@ -74,14 +74,16 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
 - **区间更新:差分算法**
   > <u>*适用场景*</u> ：适用于一个区间都要加上/减去一个固定的数字。
   >
-  > <u>*原理*</u> ：
-  >  记 $a_0=0$, $b_1=a_1=a_0$, $b_2=a_2-a_1$，依此类推，$b_s=a_s-a_{s-1}$，$b_x=a_x-a_{x-1}$，$b_{t+1}=a_{t+1}-a_t$，$b_n=a_n-a_ 
-  > {n-1}$
+  > **原理:** 
+  >  记 $a_0=0$, $b_1=a_1=a_0$, $b_2=a_2-a_1$，依此类推，$b_s=a_s-a_{s-1}$，$b_x=a_x-a_{x-1}$，$b_{t+1}=a_{t+1}-a_t$，$b_n=a_n-a_> 
+  > {n-1}$。所以$a_1=b_1$，$a_2=b_1+b_2$，$a_3=b_1+b_2+b_3$，...，$a_n=a_1+a_2+...+a_n$。
+  >
   > 所以a1=b1,a2=b1+b2,a3=b1+b2+b3...an=a1+a2+...+an
   > 由于要对区间as到at之间的a,每个都要加d,对于b相当于只有bs加了d，bt+1多减去了d,而其余b的大小不变。将区间变化转化为只对新建的b数组中的两 
   > 个数字做变化。
   >
-  > **Key part:**构建差分数组（构建前记得开辟数组空间： `memset(b,0,sizeof(b));`）
+  > **Key part:**
+  > 构建差分数组（构建前记得开辟数组空间： `memset(b,0,sizeof(b));`）
   > ```cpp
   > for(int i=1;i<=n;i++){
   >   b[s[i]]=b[s[i]]+d;
@@ -96,14 +98,14 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > ```
   >
   > <u>*相关例题*</u> ：
-  > 空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
+  > 4262空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
 
 ---
 
 - **二分算法**
-  > <u>*适用场景*</u> :在区间 $[l, r]$ 间逼近一个数字：
+  > <u>*适用场景*</u> ：在区间 $[l, r]$ 间逼近一个数字：
   >
-  > <u>*原理*</u> :
+  > **原理:** 
   > 1. 如果 mid 超出区间，则区间在 $[l, \text{mid}]$；
   > 2. 如果 mid 不会超出区间，则区间在 $[\text{mid}+1, r]$。
   > 
@@ -122,9 +124,10 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
 
 ---
 - **前缀和**
-  > <u>*适用场景*</u>: 求任意区间内数字的总和。
+  > <u>*适用场景*</u>：求任意区间内数字的总和。
   >
-  > <u>*原理*</u> 构建前缀和数组:
+  > **原理:** 
+  > 构建前缀和数组
   >
   > 设 $s_0=0, s_1=a_1, s_2=a_1+a_2, ..., s_{i-1}=a_1+a_2+...+a_{i-1}, s_i=a_1+a_2+...+a_i, s_n=a_1+a_2+...+a_n$。
   >
@@ -136,4 +139,4 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 3. `scanf("%s",str+1)` 相当于数组指针后移，从第一个数字开始。
   >
   > <u>*相关例题*</u>: 
-  > 壁画：用for循环遍历m~n,在此区间内找和max的区间,区间大小为m.
+  > 562壁画：用for循环遍历m~n,在此区间内找和max的区间,区间大小为m.
