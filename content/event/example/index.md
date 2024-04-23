@@ -156,6 +156,8 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 1. C++ `sort` 用法：`sort(起始位置，终止位置，排序方式)`；例如：`sort(w + 1, w + n + 1, greater<int>());`，`sort(a.begin(), a.> 
   end())`。
   > 2. `b = num.size()`
+  >
+  >
   > <u>*相关例题*</u>: 
   >
   > 3745 牛的学术圈：用 `for` 循环遍历 `m` 到 `n`，在此区间内找和 `max` 的区间，区间大小为 `m`。
