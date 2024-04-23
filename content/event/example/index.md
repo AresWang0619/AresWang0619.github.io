@@ -143,19 +143,19 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > <u>*适用场景*</u> ：对于每一个i来说，在一个<u> 单调</u> 递减的数组里找到>=它的最后一个数字。（此处单调指的是一个下标关于另一个下标单调），适用于有序数组，属于优化算法。
   >
   > **原理:** 
-  > h指数：大于等于h的数字至少有h个（在所有满足h的数字中取max）
+  > h指数：大于等于 `h` 的数字至少有 `h` 个（在所有满足 `h` 的数字中取 `max`）。
   >
   > **Key part:**
   > ```cpp
-  >  for(int i=1,j=n;i<=n;i++){
-  >    while(w[j]<i&&j) j--;
-  >    if(w[i]>=i-1&&i-j<=l>)
-  >    res=i;
+  > for(int i=1,j=n;i<=n;i++){
+  >  while(w[j]<i&&j) j--;
+  >  if(w[i]>=i-1&&i-j<=l)
+  >      res=i;
   > }
   > ```
-  > ps:
-  > 1. C++:sort用法 sort(起始位置，终止位置，排序方式); eg.sort(w+1,w+n+1,greater<int>()); sort(s.begin(),a.end...)
-  > 2. b=num.size()
+  > 1. C++ `sort` 用法：`sort(起始位置，终止位置，排序方式)`；例如：`sort(w + 1, w + n + 1, greater<int>());`，`sort(a.begin(), a.> 
+  end())`。
+  > 2. `b = num.size()`
   > <u>*相关例题*</u>: 
   >
-  > 3745牛的学术圈：用for循环遍历m~n,在此区间内找和max的区间,区间大小为m.
+  > 3745 牛的学术圈：用 `for` 循环遍历 `m` 到 `n`，在此区间内找和 `max` 的区间，区间大小为 `m`。
