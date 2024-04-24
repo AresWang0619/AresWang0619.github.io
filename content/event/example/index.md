@@ -69,7 +69,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 
   > a_0=0, b_1=a_1=a_0, b_2=a_2-a_1, b_s=a_s-a_{s-1}, b_x=a_x-a_{x-1}, b_{t+1}=a_{t+1}-a_t, b_n=a_n-a_{n-1}
   > 
-
+  >
   > 所以a_1=b_1,a_2=b_1+b_2,a_3=b_1+b_2+b_3...a_n=a_1+a_2+...+a_n
   > 由于要对区间 a_s 到 a_t 之间的 a ,每个都要加 d ,对于 b 相当于只有 b_s 加了 d，b_t+1 多减去了 d ,而其余 b 的大小不变。将区间变化转化为只对新建的b数组中的两 
   > 个数字做变化。
@@ -191,13 +191,14 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >         q[i] = tmp[j];
   > }
   > ```
-
+  >
   > <u>*相关例题*</u>: 
   >
   > 505 火柴排队:
   > 
   > 1. 若结果跟数组内具体大小无关，只需相对大小，即可进行离散化，将数组内的数字离散化到1~n。
   > 
+  >
   > **离散化Key part：**
   > ```cpp
   > for(int i = 1; i <= n; i++) p[i] = i; // 先将下标记录
@@ -212,6 +213,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >
   > 2. A、B 数组都是乱序的，则对其进行数组映射，将数组 A 内的数字映射为 1，2，3，4，5...，用 C 数组存储谁映射到谁：A 当中第 1 个数映射到 1 (第 i 个数映射到 i)，B 数组通过 C 数组来构建。
   > 
+  >
   > **数组映射构建Key part：**
   > ```cpp
   > // A 的映射
@@ -232,6 +234,7 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 
   > 3. 所以，至此，题目可以转化为：两个数组 a, b，要使得其中数字差值 min，首先要将 a，b 数组进行排序，求他们的逆序对数（通过归并排序求得），逆序对数就等于最少需要交换的次数。若当 a 映射后形成升序的数组，但是 b 还是乱序的，所以最终的交换次数 = b 中的逆序对数。
   > 
+  >
   > **逆序对数Key part：**
   > ```cpp
   > int res = (merge_sort(l, mid) + merge_sort(mid + 1, r)) % MOD;
