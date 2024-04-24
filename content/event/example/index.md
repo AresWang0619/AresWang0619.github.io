@@ -161,3 +161,80 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > <u>*相关例题*</u>: 
   >
   > 3745 牛的学术圈：用 `for` 循环遍历 `m` 到 `n`，在此区间内找和 `max` 的区间，区间大小为 `m`。
+
+  ---
+- **归并排序**
+  >
+  > **Key part：**
+  > ```cpp
+  > void merge_sort(int q[], int l, int r){
+  >     if(l >= r) return;
+  >     
+  >     int mid = l + r >> 1;
+  >     merge_sort(q, l, mid);
+  >     merge_sort(q, mid + 1, r); // 递归
+  > 
+  >     int k = 0, i = l, j = mid + 1;
+  > 
+  >     while(i <= mid && j <= r){
+  >         if(q[i] <= q[j]){
+  >             tmp[k++] = q[i++];
+  >         } else {
+  >             tmp[k++] = q[j++];
+  >         } // 较小的数字加入 tmp 数组
+  >     } 
+  > 
+  >     while(i <= mid) tmp[k++] = q[i++];
+  >     while(j <= r) tmp[k++] = q[j++]; // 处理一个数组已经复制完的情况
+  > 
+  >     for(i = l, j = 0; j <= k; i++, j++)
+  >         q[i] = tmp[j];
+  > }
+  > ```
+
+  > <u>*相关例题*</u>: 
+  >
+  > 505 火柴排队:
+  > 
+  > 1. 若结果跟数组内具体大小无关，只需相对大小，即可进行离散化，将数组内的数字离散化到1~n。
+  > 
+  > **离散化Key part：**
+  > ```cpp
+  > for(int i = 1; i <= n; i++) p[i] = i; // 先将下标记录
+  > sort(p + 1, p + n + 1, [&](int x, int y){
+  >       return a[x] < a[y];
+  >   }); // sort 完之后满足 a_p1 < a_p2 < a_p3 ...
+  > 
+  > for(int i = 1; i <= n; i++){
+  >     a[p[i]] = i;
+  > }
+  > ```
+  >
+  > 2. A、B 数组都是乱序的，则对其进行数组映射，将数组 A 内的数字映射为 1，2，3，4，5...，用 C 数组存储谁映射到谁：A 当中第 1 个数映射到 1 (第 i 个数映射到 i)，B 数组通过 C 数组来构建。
+  > 
+  > **数组映射构建Key part：**
+  > ```cpp
+  > // A 的映射
+  > for(int i = 1; i <= n; i++){
+  >     a[p[i]] = i;
+  > }
+  > 
+  > // C 数组的构建
+  > for(int i = 1; i <= n; i++){
+  >     c[a[i]] = i;
+  > }
+  > 
+  > // B 数组的构建
+  > for(int i = 1; i <= n; i++){
+  >     b[i] = c[b[i]];
+  > }
+  > ```
+  > 
+  > 3. 所以，至此，题目可以转化为：两个数组 a, b，要使得其中数字差值 min，首先要将 a，b 数组进行排序，求他们的逆序对数（通过归并排序求得），逆序对数就等于最少需要交换的次数。若当 a 映射后形成升序的数组，但是 b 还是乱序的，所以最终的交换次数 = b 中的逆序对数。
+  > 
+  > **逆序对数Key part：**
+  > ```cpp
+  > int res = (merge_sort(l, mid) + merge_sort(mid + 1, r)) % MOD;
+  > // 当出现逆序对，因为 i < mid < j，只有 i~mid 之间的数字要做交换
+  > if(b[j] < b[i]) res = (res + mid - i + 1) % MOD;
+  > ```
