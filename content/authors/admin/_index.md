@@ -30,7 +30,7 @@ bio: Hi! My name is Wang Yiming. I'm currently a studen in NCUT major in AI.
 interests:
   - Deep Learning
   - LLMs
-  - Photography&travel&sports
+  - Photograph & travel & sports
 
 # Education to show in About widget
 education:

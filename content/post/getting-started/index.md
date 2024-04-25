@@ -1,21 +1,19 @@
 ---
-title: Welcome to Hugo Blox Builder, the website builder for Hugo
-subtitle: Welcome 👋 We know that first impressions are important, so we've populated your new site with some initial content to help you get familiar with everything in no time.
-
+title: 论文解读 |Can Language Models Solve Graph Problems in Natural Language? 
+subtitle: 2024/3/8 论文阅读
 # Summary for listings and search engines
-summary: Welcome 👋 We know that first impressions are important, so we've populated your new site with some initial content to help you get familiar with everything in no time.
-
+summary: 大模型论文阅读
 # Link this post with a project
-projects: []
+# projects: []
 
 # Date published
-date: '2020-12-13T00:00:00Z'
+date: '2024-03-08T00:00:00Z'
 
 # Date updated
-lastmod: '2020-12-13T00:00:00Z'
+lastmod: '2024-3-15T00:00:00Z'
 
 # Is this an unpublished draft?
-draft: false
+# draft: false
 
 # Show this page in the Featured widget?
 featured: false
@@ -23,29 +21,24 @@ featured: false
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
+  caption: 'Image credit: 取自文章'
   focal_point: ''
   placement: 2
   preview_only: false
 
 authors:
-  - admin
-  - 吳恩達
+  - Ares
+  
 
 tags:
-  - Academic
-  - 开源
+  - 论文解读
+  - LLMs
 
-categories:
-  - Demo
-  - 教程
+# categories:
+#   - Demo
+#   - 教程
 ---
-
-```python
-import libr
-print('hello')
-```
-
+<!-- 
 ## Overview
 
 1. The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site
@@ -103,8 +96,4 @@ Wowchemy and its templates come with **automatic day (light) and night (dark) mo
 
 [Choose a stunning **theme** and **font**](https://docs.hugoblox.com/customization) for your site. Themes are fully customizable.
 
-## License
-
-Copyright 2016-present [George Cushen](https://georgecushen.com).
-
-Released under the [MIT](https://github.com/HugoBlox/hugo-blox-builder/blob/master/LICENSE.md) license.
+## License -->

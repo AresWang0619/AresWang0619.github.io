@@ -266,14 +266,17 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > }
   > ```
 
+
   >tips:
   > 1.malloc: 初始值不确定 `int* a=(int*)malloc(numsize*sizeof(int))`
+  >
   > 2.calloc: 初始值全为0 `int* a=(int*)calloc(numsize+1,sizeof(int))`
+
 
   >**回文链表**
   >直接将链表内的值存入数组
   >
-  >**Ket part**
+  >**Ket part:**
   >```cpp
   > while(j<i-1){
   >   a[i-1]!=a[j];
