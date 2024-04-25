@@ -241,3 +241,42 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > // 当出现逆序对，因为 i < mid < j，只有 i~mid 之间的数字要做交换
   > if(b[j] < b[i]) res = (res + mid - i + 1) % MOD;
   > ```
+
+---
+
+- **链表专场**
+  > 
+  > **反转链表:** 
+  >
+  >  <u>头插法</u>: 
+  > 1. 初始化：`head` 指向链表的第一个节点，而 `p` 作为迭代变量开始时也指向 `head`。
+  > 2. **遍历：通过迭代 `p`，我们在链表上移动，`q` 用于暂存 `p->next`，即当前节点之后的部分。
+  > 3. 头插法：将 `p` 的下一个节点指向当前的 `head`，然后更新 `head` 为 `p`，从而将当前节点移至新链表的前端。
+  > 4. 移动：将 `p` 更新为 `q`，即继续处理链表的下一个节点。
+  >
+  > **Key part:**
+  > ```cpp
+  > ListNode* p = head;
+  > ListNode* q = NULL;
+  > while (p) {
+  >     q = p->next; // q暂存下一个节点
+  >     p->next = head; // p的下一个节点指向头节点
+  >     head = p; // 将头节点的值赋给p的下一个节点
+  >     p = q; // 把q中暂存的赋还给p
+  > }
+  > ```
+
+  >tips:
+  > 1.malloc: 初始值不确定 `int* a=(int*)malloc(numsize*sizeof(int))`
+  > 2.calloc: 初始值全为0 `int* a=(int*)calloc(numsize+1,sizeof(int))`
+
+  >**回文链表**
+  >直接将链表内的值存入数组
+  >
+  >**Ket part**
+  >```cpp
+  > while(j<i-1){
+  >   a[i-1]!=a[j];
+  >   return flase;
+  > }
+  >```
