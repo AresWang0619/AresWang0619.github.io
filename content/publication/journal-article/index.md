@@ -4,7 +4,7 @@ authors:
 - Yuyao Ge
 - Zhongguo Yang
 - Lizhe Chen
-- **Yiming Wang**
+- Yiming Wang
 - Chengyang Li
 # author_notes:
 # - "Equal contribution"
