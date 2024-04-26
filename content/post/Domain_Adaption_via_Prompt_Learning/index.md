@@ -33,7 +33,7 @@ authors:
 tags:
   - 论文解读
   - CV
-  -Promot Learning
+  - Promot Learning
 
 # categories:
 #   - Demo
