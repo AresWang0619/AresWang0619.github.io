@@ -25,7 +25,7 @@ date: '2024-04-21T21:25:00Z'
 # publishDate: '2021-07-01T00:00:00Z'
 
 authors: [Ares]
-tags: []
+tags: [Algorithm]
 
 # Is this a featured talk? (true/false)
 featured: True
@@ -273,7 +273,8 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   > 2.calloc: 初始值全为0 `int* a=(int*)calloc(numsize+1,sizeof(int))`
 
 
-  >**回文链表**
+  >**回文链表:**
+  >
   >直接将链表内的值存入数组
   >
   >**Ket part:**
@@ -285,16 +286,19 @@ Further event details, including [page elements](https://docs.hugoblox.com/refer
   >```
   
 
-  > **判断是否是环形链表**
+  > **判断是否是环形链表:**
+  >
   > 核心是快慢指针的运用（龟兔赛跑）
   > 设置两个指针指向head：当q走两步，若和p指针相遇，则return true，否则p再往前走1
   >与**移动0**问题相似：指针没有指向0就从头开始赋值，最后在添上0
 
 
-  >**寻找两国链表的交点**
+  >**寻找两国链表的交点:**
+  >
   >双指针while循环，知道两个指针指向相同的位置，要考虑链表长短不一问题，需要进行一次判断。
 
 
-  >**找出出现次数大于n/2的数字**
+  >**找出出现次数大于n/2的数字:**
+  >
   > 先进行排序，直接输出排序后的数组的中位数就可以
 
