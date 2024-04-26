@@ -28,7 +28,7 @@ authors: [Ares]
 tags: []
 
 # Is this a featured talk? (true/false)
-featured: true
+featured: True
 
 image:
   caption: 'bigbang theory'
