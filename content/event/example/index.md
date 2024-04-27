@@ -274,33 +274,138 @@ image:
   >
   > 2.calloc: 初始值全为0 `int* a=(int*)calloc(numsize+1,sizeof(int))`
 
-
-  >**回文链表:**
-  >
-  >直接将链表内的值存入数组
-  >
-  >**Ket part:**
-  >```cpp
-  > while(j<i-1){
-  >   a[i-1]!=a[j];
-  >   return flase;
-  > }
-  >```
-  
-
-  > **判断是否是环形链表:**
-  >
-  > 核心是快慢指针的运用（龟兔赛跑）
-  > 设置两个指针指向head：当q走两步，若和p指针相遇，则return true，否则p再往前走1
-  >与**移动0**问题相似：指针没有指向0就从头开始赋值，最后在添上0
-
-
-  >**寻找两国链表的交点:**
-  >
-  >双指针while循环，知道两个指针指向相同的位置，要考虑链表长短不一问题，需要进行一次判断。
+> **回文链表:**
+>  
+> 直接将链表内的值存入数组
+> ```cpp
+> struct ListNode *p = head;
+> while (p != NULL) {
+>     a[i++] = p->val;
+>     p = p->next;
+> }
+> ```
+>  
+> **Key part:**
+> ```cpp
+> while (j < i - 1) {
+>     if (a[j] != a[i - 1]) {
+>         return false;
+>     }
+>     j++;
+>     i--;
+> }
+> ```
 
 
-  >**找出出现次数大于n/2的数字:**
-  >
-  > 先进行排序，直接输出排序后的数组的中位数就可以
+> **判断是否是环形链表:**
+>  
+> 核心是快慢指针的运用（龟兔赛跑）
+> 设置两个指针指向 head：当 q 走两步，若和 p 指针相遇，则 return true，否则 p 再往前走 1
+>  
+> **Key part:**
+> ```cpp
+> struct ListNode *p = head, *q = head;
+> while (p != NULL) {
+>     p = p->next;
+>     if (p != NULL) {
+>         p = p->next;
+>     }
+>     if (p == q) {
+>         return true;
+>     } else {
+>         q = q->next;
+>     }
+> }
+> ```
 
+> 与 **移动0** 问题相似：指针没有指向 0 就从头开始赋值，最后再添上 0
+>
+>**Key part:**
+> ```cpp
+> for (i = 0; i < numsSize; i++) {
+>     if (nums[i] != 0) {
+>         nums[j] = nums[i];
+>         j++;
+>     }
+> }
+> 
+> for (i = j; i < numsSize; i++) {
+>     nums[i] = 0;
+> }
+> ```
+
+> **寻找两个链表的交点:**
+>  
+> 双指针 while 循环，直到两个指针指向相同的位置，需要考虑链表长短不一的情况，需要进行一次判断。
+>
+>**Key part:**
+> ```cpp
+> struct ListNode *p = headA;
+> struct ListNode *q = headB;
+> while (q != p) {
+>     if (q != NULL) {
+>         q = q->next;
+>     } else {
+>         q = headB;
+>     }
+>     if (p != NULL) {
+>         p = p->next;
+>     } else {
+>         p = headA;
+>     }
+> }
+> return q;
+> ```
+
+> **找出出现次数大于 n/2 的数字:**
+>  
+> 先进行排序，直接输出排序后的数组的中位数就可以
+
+
+> **两个链表加和**
+>  
+> 1. 创建一个新的链表记录和
+> 2. t 记录进位：t % 10; t = t / 10
+> 3. 创建头尾结点 l_1, l_2
+>
+>**Key part:**
+> ```cpp
+> while (l1 || l2 || t) {
+>     if (l1) {
+>         t += l1->val;
+>         l1 = l1->next;
+>     }
+>     if (l2) {
+>         t += l2->val;
+>         l2 = l2->next;
+>     }
+>     cur->next = malloc(sizeof(struct ListNode));
+>     cur->next->val = t % 10;
+>     cur->next->next = NULL;
+>     cur = cur->next;
+>     t = t / 10;
+> } 
+> ```
+
+
+> **回文链表:**
+>  
+> 直接将链表内的值存入数组
+> ```cpp
+> struct ListNode *p = head;
+> while (p != NULL) {
+>     a[i++] = p->val;
+>     p = p->next;
+> }
+> ```
+>  
+> **Key part:**
+> ```cpp
+> while (j < i - 1) {
+>     if (a[j] != a[i - 1]) {
+>         return false;
+>     }
+>     j++;
+>     i--;
+> }
+> ```
