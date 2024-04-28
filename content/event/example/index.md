@@ -408,27 +408,7 @@ end())`。
 > ```
 
 
-> ### 回文链表 <a name="二叉树遍历方法"></a>
->  
-> 直接将链表内的值存入数组
-> ```cpp
-> struct ListNode *p = head;
-> while (p != NULL) {
->     a[i++] = p->val;
->     p = p->next;
-> }
-> ```
->  
-> **Key part:**
-> ```cpp
-> while (j < i - 1) {
->     if (a[j] != a[i - 1]) {
->         return false;
->     }
->     j++;
->     i--;
-> }
-> ```
+
 
 ---
 
