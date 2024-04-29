@@ -81,7 +81,9 @@ image:
   - [两个链表加和](#两个链表加和)
 - [二叉树专场](#二叉树专场)
   - [二叉树遍历方法](#二叉树遍历方法)
-
+  - [判断二叉树是否对称](#判断二叉树是否对称)
+  - [翻转二叉树的左右子树](#翻转二叉树的左右子树)
+  
 ---
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
@@ -435,3 +437,28 @@ end())`。
 >     preorder(root->right, res, resSize); // 右
 > }
 > ```
+
+
+> ### 判断二叉树是否对称 <a name="判断二叉树是否对称"></a>
+>
+> 采用<u>递归</u>的方法（二叉树相关大多都涉及递归）：
+>
+> 1. 左子树为 NULL，右子树也为 NULL：返回 true。
+> 2. 左右子树中有一个为 NULL：返回 false。
+> 3. 左右子树值不相等：返回 false。
+>
+> 最后递归返回 `search(left->left, right->right) && search(left->right, right->left)`。
+
+
+> ### 翻转二叉树的左右子树 <a name="翻转二叉树的左右子树"></a>
+>
+> 同样使用<u>递归</u>的方法：
+> 
+> ```c
+> struct TreeNode* temp;
+> temp = root->left; //创建临时变量存储letf
+> root->left = root->right; //将右子树的值存进左子树
+> root->right = temp; //将temp中存的左子树的值赋给右子树
+> invertTree(root->right);
+> invertTree(root->left);
+> ``
