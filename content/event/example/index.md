@@ -461,4 +461,4 @@ end())`。
 > root->right = temp; //将temp中存的左子树的值赋给右子树
 > invertTree(root->right);
 > invertTree(root->left);
-> ``
+> ```
