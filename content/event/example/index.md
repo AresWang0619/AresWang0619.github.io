@@ -83,7 +83,8 @@ image:
   - [二叉树遍历方法](#二叉树遍历方法)
   - [判断二叉树是否对称](#判断二叉树是否对称)
   - [翻转二叉树的左右子树](#翻转二叉树的左右子树)
-  
+  - [二叉树的直径](#二叉树的直径)
+  - [二叉树的合并](#二叉树的合并)
 ---
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
@@ -462,3 +463,34 @@ end())`。
 > invertTree(root->right);
 > invertTree(root->left);
 > ```
+
+> ### 二叉树的直径 <a name="二叉树的直径"></a>
+>
+> 需要预先定义一个 `MAX` 函数：`#define MAX(a,b) ((a)>(b) ? (a) : (b))`
+>
+> 将问题转换为求左右子树最大的深度之和，但是最终结果应该是左子树深度加上右子树深度 - 1（由于重复计算根节点，所以要减去1）。
+>
+> ```c
+> int max1(struct TreeNode* root, int *ans) {
+>    if (root == NULL) {
+>        return 0;
+>    }
+>    int maxright = max1(root->right, ans);
+>    int maxleft = max1(root->left, ans);
+>
+>    *ans = MAX(*ans, maxleft + maxright + 1);
+>    return MAX(maxleft + 1, maxright + 1);
+> }
+> ```
+
+> ### 二叉树的合并 <a name="二叉树的合并"></a>
+> 使用**递归**的方法：
+>
+> ```cpp
+> if (root1 != NULL && root2 != NULL) {
+>        root1->val += root2->val;
+>        root1->right = mergeTrees(root1->right, root2->right);
+>        root1->left = mergeTrees(root1->left, root2->left);
+> }
+> ```
+>
