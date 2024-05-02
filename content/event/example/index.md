@@ -537,12 +537,12 @@ end())`。
 >         right++;
 >     }
 >     if (right - left + 1 - 2 > max) {
->         max = right - left + 1 - 2; \\max=right-leeft+1-2,因为left和right分别都++和--了
+>         max = right - left + 1 - 2; //max=right-leeft+1-2,因为left和right分别都++和--了
 >         p = left + 1;
 >     }
 > }
-> s[p + max] = '\0'; \\注意要在新生成的字符串末尾加上'\0'表示结束
-> return p + s; \\返回字符串s中第p个字符的指针
+> s[p + max] = '\0'; //注意要在新生成的字符串末尾加上'\0'表示结束
+> return p + s; //返回字符串s中第p个字符的指针
 > ```
 
 ---
