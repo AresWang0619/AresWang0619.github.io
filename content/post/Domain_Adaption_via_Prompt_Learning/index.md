@@ -37,7 +37,8 @@ tags:
   - Promot Learning
 
 ---
-abstract: >
+
+**abstract:**
   Unsupervised domain adaption (UDA) aims to adapt models learned from a well-annotated source domain to a target domain, where only unlabeled samples are given. Current UDA approaches learn domain-invariant features by aligning source and target feature spaces. Such alignments are imposed by constraints such as statistical discrepancy minimization or adversarial training. However, these constraints could lead to the distortion of semantic feature structures and loss of class discriminability. In this paper, we introduce a novel prompt learning paradigm for UDA, named Domain Adaptation via Prompt Learning (DAPL). In contrast to prior works, our approach makes use of pre-trained vision-language models and optimizes only very few parameters. The main idea is to embed domain information into prompts, a form of representations generated from natural language, which is then used to perform classification. This domain information is shared only by images from the same domain, thereby dynamically adapting the classifier according to each domain. By adopting this paradigm, we show that our model not only outperforms previous methods on several cross-domain benchmarks but also is very efficient to train and easy to implement.
 
 在进行论文解读之前，我们需要了解一些背景知识。
@@ -59,10 +60,18 @@ abstract: >
 4. 将FC层的输出维度设定为二维。
 5. 应用Argmax或Softmax，得到概率最大的下标，即积极或消极。
 
-![使用了 prompt learning](/uploads/prompt_way.jpg "传使用了 prompt learning")
+![使用了 prompt learning](/uploads/prompt_way.jpg "使用了 prompt learning")
 
 使用 prompt：
 1. 在【今天天气真好】前提问一个问题，例如：“后面的句子情感是积极的还是消极的？”
 2. 在问题后面添加一个 MASK，我们期望 MASK 输出是积极的。
 3. 如果生成的词是积极情感的，将其映射为标签1；否则，模型继续学习。
 4. 无论是积极还是消极，确保生成的词在模型学到的词汇表中存在。
+
+提出背景：
+
+1. 在预训练和微调阶段，不同的优化目标导致性能损失。预训练语言模型适配任务时可能会损失性能。
+
+2. 预训练语言模型体量庞大、训练复杂，难以进行微调。
+
+因此，需要探索更轻量、更普适的方法。Prompt Learning 的出现旨在解决适配下游任务性能损失和微调困难的问题。其目标是使下游任务更适配语言模型，而基于目标工程的预训练语言模型则是让模型适配下游任务。
