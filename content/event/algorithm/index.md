@@ -35,39 +35,9 @@ image:
   focal_point: Right
 
 
-# Markdown Slides (optional).
-#   Associate this talk with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-# slides: example
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-# projects:
-#   - example
-
-# <!-- 
-# {{% callout note %}}
-# Click on the **Slides** button above to view the built-in slides feature.
-# {{% /callout %}}
-
-# Slides can be added in a few ways:
-
-# - **Create** slides using Hugo Blox Builder's [_Slides_](https://docs.hugoblox.com/reference/content-types/) feature and link using `slides` parameter in the front matter of the talk file
-# - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
-# - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://docs.hugoblox.com/reference/markdown/).
-
-# Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
-
-
-
 ---
 ## 目录
-- [区间更新:差分算法](#区间更新差分算法)
+<!-- - [区间更新:差分算法](#区间更新差分算法)
 - [二分算法](#二分算法)
 - [前缀和](#前缀和)
 - [双指针](#双指针)
@@ -88,7 +58,38 @@ image:
 - [无重复字符串的最长子串](#无重复字符串的最长子串)
 - [最长回文子串](#最长回文子串)
 - [盛水最多的容器](#盛水最多的容器)
----
+--- -->
+
+<div style="column-count: 2;">
+    <ul>
+        <li><a href="#区间更新差分算法">区间更新:差分算法</a></li>
+        <li><a href="#二分算法">二分算法</a></li>
+        <li><a href="#前缀和">前缀和</a></li>
+        <li><a href="#双指针">双指针</a></li>
+        <li><a href="#归并排序">归并排序</a></li>
+        <li><a href="#链表专场">链表专场</a></li>
+            <ul>
+                <li><a href="#反转链表">反转链表</a></li>
+                <li><a href="#回文链表">回文链表</a></li>
+                <li><a href="#判断是否是环形链表">判断是否是环形链表</a></li>
+                <li><a href="#寻找两个链表的交点">寻找两个链表的交点</a></li>
+                <li><a href="#找出出现次数大于-n2-的数字">找出出现次数大于 n/2 的数字</a></li>
+                <li><a href="#两个链表加和">两个链表加和</a></li>
+            </ul>
+        <li><a href="#二叉树专场">二叉树专场</a></li>
+            <ul>
+                <li><a href="#二叉树遍历方法">二叉树遍历方法</a></li>
+                <li><a href="#判断二叉树是否对称">判断二叉树是否对称</a></li>
+                <li><a href="#翻转二叉树的左右子树">翻转二叉树的左右子树</a></li>
+                <li><a href="#二叉树的直径">二叉树的直径</a></li>
+                <li><a href="#二叉树的合并">二叉树的合并</a></li>
+            </ul>
+        <li><a href="#无重复字符串的最长子串">无重复字符串的最长子串</a></li>
+        <li><a href="#最长回文子串">最长回文子串</a></li>
+        <li><a href="#盛水最多的容器">盛水最多的容器</a></li>
+    </ul>
+</div>
+
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
 > <u>*适用场景*</u> ：适用于一个区间都要加上/减去一个固定的数字。
