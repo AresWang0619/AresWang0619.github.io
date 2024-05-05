@@ -93,6 +93,7 @@ tags:
 
 为了解决这一问题，提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
 
+本文中的Prompt是由三部分组成：域无关上下文/Domain-agnostic（用来表示任务信息，是共享的，它比较不关注特定领域差异，注重通用理解），域特定上下文/Domian-specific（表示域信息，捕捉特定的领域特征），类标签/Class lable（区分不同的类别，更好地保留语义信息），
 
 ![Prompt Learning Method for UDA](/uploads/prompt_inpaper.jpg "Prompt Learning Method for UDA")
 
