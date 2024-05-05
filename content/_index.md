@@ -70,7 +70,7 @@ sections:
           location: Beijing
           date_start: '2024-02-15'
           date_end: '2024-04-09'
-          description: 参与实验室科研项目：基于 In-Context Learning +U-net 的跨域轻量级眼底血管分割模型。
+          description: 参与实验室科研项目：基于 Prompt Learning +U-net 的跨域轻量级眼底血管分割模型。
         - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
