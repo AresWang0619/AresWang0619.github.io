@@ -2,7 +2,9 @@
 title: 论文解读 |Domain Adaptation via Prompt Learning
 subtitle: 2024/2/26 论文阅读
 # Summary for listings and search engines
-summary: Unsupervised domain adaption (UDA) aims to adapt models learned from a well-annotated source domain to a target domain, where only unlabeled samples are given. Current UDA approaches learn domain-invariant features by aligning source and target feature spaces. Such alignments are imposed by constraints such as statistical discrepancy minimization or adversarial training. However, these constraints could lead to the distortion of semantic feature structures and loss of class discriminability. In this paper, we introduce a novel prompt learning paradigm for UDA, named Domain Adaptation via Prompt Learning (DAPL). In contrast to prior works, our approach makes use of pre-trained vision-language models and optimizes only very few parameters. The main idea is to embed domain information into prompts, a form of representations generated from natural language, which is then used to perform classification. This domain information is shared only by images from the same domain, thereby dynamically adapting the classifier according to each domain. By adopting this paradigm, we show that our model not only outperforms previous methods on several cross-domain benchmarks but also is very efficient to train and easy to implement.
+summary: 2024/2/26 论文阅读
+
+abstract: Unsupervised domain adaption (UDA) aims to adapt models learned from a well-annotated source domain to a target domain, where only unlabeled samples are given. Current UDA approaches learn domain-invariant features by aligning source and target feature spaces. Such alignments are imposed by constraints such as statistical discrepancy minimization or adversarial training. However, these constraints could lead to the distortion of semantic feature structures and loss of class discriminability. In this paper, we introduce a novel prompt learning paradigm for UDA, named Domain Adaptation via Prompt Learning (DAPL). In contrast to prior works, our approach makes use of pre-trained vision-language models and optimizes only very few parameters. The main idea is to embed domain information into prompts, a form of representations generated from natural language, which is then used to perform classification. This domain information is shared only by images from the same domain, thereby dynamically adapting the classifier according to each domain. By adopting this paradigm, we show that our model not only outperforms previous methods on several cross-domain benchmarks but also is very efficient to train and easy to implement.
 # Link this post with a project
 # projects: []
 
@@ -47,5 +49,5 @@ tags:
 
 预训练模型提供了一个很好的初始化参数，这组参数在预训练任务上的表现很好。但是下游任务种类很多，我们需要在这组参数的基础上进行 Fine-tune 以适应我们的下游任务。目前做 NLP 任务的大致流程即 "Pre-train, Fine-tune"。融入了 Prompt 的模式大致可以归纳成 "Pre-train, Prompt, and Predict"，在该模式中下游任务被重新调整成类似预训练任务的形式。
 
-![传统的预训练模型](/static/uploads/image.jpg)
+![传统的预训练模型](/uploads/image.jpg)
 
