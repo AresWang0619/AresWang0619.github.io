@@ -25,7 +25,7 @@ authors: [Ares]
 tags: [LLMs]
 
 # Is this a featured talk? (true/false)
-featured: True
+featured: False
 
 image:
   caption: 'bigbang theory'
