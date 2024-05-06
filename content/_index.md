@@ -222,6 +222,16 @@ sections:
           # organization_url: https://www.datacamp.com
           title: '中国人工智能及智能大赛 | 北京市一等奖'
           url: ''
+        - certificate_url: ''
+          date_end: '2023-05-06'
+          date_start: '2023-05-01'
+          description: ''
+          icon: trophy
+          icon_pack: fas
+          # organization: DataCamp
+          # organization_url: https://www.datacamp.com
+          title: '蓝桥杯c/c++组 | 北京市二等奖'
+          url: ''
     design:
       columns: '2'
   - block: skills
