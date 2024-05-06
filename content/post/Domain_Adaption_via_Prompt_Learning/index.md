@@ -89,15 +89,14 @@ Prompt learning的提出背景：
 
 这篇文章介绍了一种名为Domain Adaptation via Prompt Learning (DAPL)的新型无监督领域适应方法。传统的无监督领域适应方法通常通过对齐源域和目标域的特征空间来学习域不变特征。然而，这种对齐可能导致语义特征结构的扭曲和类别可分性的丢失。与之不同，DAPL方法利用预训练的视觉-语言模型，将领域信息嵌入到提示中，用于执行分类任务。这种方法不仅在几个跨领域基准测试中表现出色，而且训练效率高、易于实现。
 
-总结来说，文章的主要贡献包括：
-首次将提示学习应用于无监督领域适应；
-提出在提示中使用领域特定的上下文信息，避免了在领域对齐中损失语义信息；
-在Office-Home和VisDA-2017数据集上实现了最先进的性能，将准确度提高了2.5%。
-
+总的来说，文章的主要贡献包括：
+- 首次将提示学习应用于无监督领域适应；
+- 提出在提示中使用领域特定的上下文信息，避免了在领域对齐中损失语义信息；
+- 在Office-Home和VisDA-2017数据集上实现了最先进的性能，将准确度提高了2.5%。
 
 
 # Method overview
-提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
+本文提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
 
 本文中的Prompt是由三部分组成：域无关上下文/Domain-agnostic（用来表示任务信息，是共享的，它比较不关注特定领域差异，注重通用理解），域特定上下文/Domian-specific（表示域信息，捕捉特定的领域特征），类标签/Class lable（区分不同的类别，更好地保留语义信息）。
 
@@ -105,10 +104,38 @@ Prompt learning的提出背景：
 
 采用对比进行训练。当图像和文本的领域和类别分别对齐的时候，形成一对正例（positive），其余均为反例（negative）。
 
-1.对比X_s在特征空间中对齐y,即在特征空间中对齐“sketch”和"dog"，学习到它们的特征空间表示。
-2.对比X_T  和y,将“sketch”的文本表示从”photo“域中分离。     
-3.域和类别的表示分别对齐。论文采用对比语言图像预训练（CLIP）作为backbone，以促进快速学习和对比学习。
+1. 对比X_s在特征空间中对齐y,即在特征空间中对齐“sketch”和"dog"，学习到它们的特征空间表示。
+2. 对比X_T  和y,将“sketch”的文本表示从”photo“域中分离。     
+3. 域和类别的表示分别对齐。论文采用对比语言图像预训练（CLIP）作为backbone，以促进快速学习和对比学习。
 
 
 ![Our method](/uploads/prompt_method.jpg "Our method")
+
+
+![overview](/uploads/p_overview.jpg "准备工作" )
+
+![overview](/uploads/p1_overview.jpg  )
+![overview](/uploads/p2_overview.jpg "Overview" )
+
+# 总结
+
+总结一下，整个DAPL方法的流程如下：
+
+**输入：**
+- Vision encoder f()：图像编码器
+- Text encoder g()：文本编码器
+- Source domain data x_s：源域数据
+- Target domain data x_u：目标域数据
+- Source domain prompt t_s：源域提示
+- Target domain prompt t_u：目标域提示
+- Label for source domain data y_s：源域数据的标签
+
+**输出：**
+- Target domain prompt t_u：更新后的目标域提示
+
+**算法步骤：**
+
+1. 使用 Eq. 6 和 Eq. 7 预测源域图像和目标域图像的标签。同时，通过零样本推断使用 CLIP 预测目标域图像的伪标签。
+2. 计算损失函数 L，该损失由两部分组成，分别是源域图像和目标域图像的交叉熵损失。然后，更新源域提示 t_s 和目标域提示 t_u。
+3. 重复以上步骤直到收敛。得到model.
 

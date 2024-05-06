@@ -1,5 +1,5 @@
 ---
-title: AI things learning
+title: AI Things 
 
 # location: leetcode
 # address:
