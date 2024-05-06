@@ -38,28 +38,21 @@ tags:
 
 ---
 
-**title:** 
-Domain Adaptation via Prompt Learning
+**title:** Domain Adaptation via Prompt Learning
 
-**institute:** 
-Department of Automation, BNRist, Tsinghua University 2Beijing Institute of Technology
+**institute:** Department of Automation, BNRist, Tsinghua University 2Beijing Institute of Technology
 3Carnegie Mellon University 4Beijing Academy of Artificial Intelligence
 
-**authors:** 
-C Ge, R Huang, M Xie, Z Lai, S Song, S Li, G Huang
+**authors:** C Ge, R Huang, M Xie, Z Lai, S Song, S Li, G Huang
 
-**Date:** 
-2022.2.14
+**Date:** 2022.2.14
 
-**link:** 
-https://arxiv.org/abs/2202.06687
+**link:** https://arxiv.org/abs/2202.06687
 
 
-## 首先我们要知道：
+# 背景知识：
 
-在进行论文解读之前，我们需要了解一些背景知识。
-
-首先，最重要的是什么是 prompt learning？
+首先，最重要的是,什么是 <u>prompt learning</u>？
 
 简单地说，就是对输入的文本信息按照特定模板进行处理，把任务重构成一个更能够充分利用预训练语言模型处理的形式。
 
@@ -84,7 +77,7 @@ https://arxiv.org/abs/2202.06687
 3. 如果生成的词是积极情感的，将其映射为标签1；否则，模型继续学习。
 4. 无论是积极还是消极，确保生成的词在模型学到的词汇表中存在。
 
-提出背景：
+Prompt learning的提出背景：
 
 1. 在预训练和微调阶段，不同的优化目标导致性能损失。预训练语言模型适配任务时可能会损失性能。
 
@@ -92,7 +85,7 @@ https://arxiv.org/abs/2202.06687
 
 因此，需要探索更轻量、更普适的方法。Prompt Learning 的出现旨在解决适配下游任务性能损失和微调困难的问题。其目标是使下游任务更适配语言模型，而基于目标工程的预训练语言模型则是让模型适配下游任务。
 
-## 介绍
+# 介绍
 
 这篇文章介绍了一种名为Domain Adaptation via Prompt Learning (DAPL)的新型无监督领域适应方法。传统的无监督领域适应方法通常通过对齐源域和目标域的特征空间来学习域不变特征。然而，这种对齐可能导致语义特征结构的扭曲和类别可分性的丢失。与之不同，DAPL方法利用预训练的视觉-语言模型，将领域信息嵌入到提示中，用于执行分类任务。这种方法不仅在几个跨领域基准测试中表现出色，而且训练效率高、易于实现。
 
@@ -103,7 +96,7 @@ https://arxiv.org/abs/2202.06687
 
 
 
-## Method overview
+# Method overview
 提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
 
 本文中的Prompt是由三部分组成：域无关上下文/Domain-agnostic（用来表示任务信息，是共享的，它比较不关注特定领域差异，注重通用理解），域特定上下文/Domian-specific（表示域信息，捕捉特定的领域特征），类标签/Class lable（区分不同的类别，更好地保留语义信息）。
