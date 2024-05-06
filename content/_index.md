@@ -232,11 +232,6 @@ sections:
       username: admin
     design:
       columns: '1'
-  - block: tag_cloud
-    content:
-      title: Popular Topics
-    design:
-      columns: '2'
   - block: markdown
     content:
       title: Gallery
@@ -245,7 +240,11 @@ sections:
         {{< gallery album="demo" >}}
     design:
       columns: '1'
-  
+  - block: tag_cloud
+    content:
+      title: Popular Topics
+    design:
+      columns: '2'
   
 
   # - block: contact

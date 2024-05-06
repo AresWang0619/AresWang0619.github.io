@@ -19,7 +19,9 @@ main:
   - name: Talks
     url: '#talks'
     weight: 30
-  
+  - name: Accomplish­ments
+    url: '#section-accomplishments'
+    weight: 35
   - name: Gallery
     url: '#section-markdown'
     weight: 60
