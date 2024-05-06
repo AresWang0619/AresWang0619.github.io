@@ -38,8 +38,19 @@ tags:
 
 ---
 
-**abstract:**
-  Unsupervised domain adaption (UDA) aims to adapt models learned from a well-annotated source domain to a target domain, where only unlabeled samples are given. Current UDA approaches learn domain-invariant features by aligning source and target feature spaces. Such alignments are imposed by constraints such as statistical discrepancy minimization or adversarial training. However, these constraints could lead to the distortion of semantic feature structures and loss of class discriminability. In this paper, we introduce a novel prompt learning paradigm for UDA, named Domain Adaptation via Prompt Learning (DAPL). In contrast to prior works, our approach makes use of pre-trained vision-language models and optimizes only very few parameters. The main idea is to embed domain information into prompts, a form of representations generated from natural language, which is then used to perform classification. This domain information is shared only by images from the same domain, thereby dynamically adapting the classifier according to each domain. By adopting this paradigm, we show that our model not only outperforms previous methods on several cross-domain benchmarks but also is very efficient to train and easy to implement.
+**title:**Domain Adaptation via Prompt Learning
+
+**institute:**Department of Automation, BNRist, Tsinghua University 2Beijing Institute of Technology
+3Carnegie Mellon University 4Beijing Academy of Artificial Intelligence
+
+**authors:**C Ge, R Huang, M Xie, Z Lai, S Song, S Li, G Huang
+
+**Date:**2022.2.14
+
+**link:** https://arxiv.org/abs/2202.06687
+
+
+## 首先我们要知道：
 
 在进行论文解读之前，我们需要了解一些背景知识。
 
@@ -76,28 +87,24 @@ tags:
 
 因此，需要探索更轻量、更普适的方法。Prompt Learning 的出现旨在解决适配下游任务性能损失和微调困难的问题。其目标是使下游任务更适配语言模型，而基于目标工程的预训练语言模型则是让模型适配下游任务。
 
-## introduction：
+## 介绍
 
-近年来，深度学习在大规模标注数据的帮助下取得了巨大成功，但标注大规模数据集仍然是一项费时费力的任务。为了克服这一挑战，提出了无监督领域自适应（UDA，Unsupervised Domain Adaptation）的概念：即从注释良好的源域（Source Domain）学习到的模型自适应到只提供未标记样本的目标域（Target Domain）。其核心目标在于在域偏移（Domain Shift）情况下实现知识的迁移。目前，常见的UDA方法主要基于卷积技术，通过调整模型表示，使得源域和目标域的特征空间更加相似，以此来学习域不变表示。
+这篇文章介绍了一种名为Domain Adaptation via Prompt Learning (DAPL)的新型无监督领域适应方法。传统的无监督领域适应方法通常通过对齐源域和目标域的特征空间来学习域不变特征。然而，这种对齐可能导致语义特征结构的扭曲和类别可分性的丢失。与之不同，DAPL方法利用预训练的视觉-语言模型，将领域信息嵌入到提示中，用于执行分类任务。这种方法不仅在几个跨领域基准测试中表现出色，而且训练效率高、易于实现。
 
-传统的UDA方法分类:
-1. 基于统计差异最小化: 最大均值差异（MMD，Maximum Mean Discrepancy)和中心距差异（CMD，Central Moment Discrepancy）
-2. 基于对抗学习:通过融合判别器来减少源域和目标域在特征空间的差异。
+总结来说，文章的主要贡献包括：
+首次将提示学习应用于无监督领域适应；
+提出在提示中使用领域特定的上下文信息，避免了在领域对齐中损失语义信息；
+在Office-Home和VisDA-2017数据集上实现了最先进的性能，将准确度提高了2.5%。
 
-存在困难：
-1. 源域和目标域之间存在数据分布偏移，对齐容易产生源域特征扭曲，类的可分辨性丧失。
 
-2. 由于数据的分布非线性，语义信息和源域信息纠缠，容易产生语义信息丧失。
-   
-针对这些困难，虽然已经提出了一些改进方法，如保留语义信息以维持类间信息差异，但仍然存在一个问题，即领域对齐和保留语义特征之间的权衡。
 
-为了解决这一问题，提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
+## Method overview
+提出了学习解耦语义（Disentangled Semantic）的概念，即将语义和域信息分离。为了实现这一目标，引入了Prompt Learning Method for UDA，即通过提示学习实现域自适应。这种方法的优点在于能够学习到在连续标签空间中的表示，从而避免了语义信息的丧失，并实现了领域和类别分离的表示。
 
 本文中的Prompt是由三部分组成：域无关上下文/Domain-agnostic（用来表示任务信息，是共享的，它比较不关注特定领域差异，注重通用理解），域特定上下文/Domian-specific（表示域信息，捕捉特定的领域特征），类标签/Class lable（区分不同的类别，更好地保留语义信息）。
 
 ![Prompt Learning Method for UDA](/uploads/prompt_inpaper.jpg "Prompt Learning Method for UDA")
 
-**Method overview**
 采用对比进行训练。当图像和文本的领域和类别分别对齐的时候，形成一对正例（positive），其余均为反例（negative）。
 
 1.对比X_s在特征空间中对齐y,即在特征空间中对齐“sketch”和"dog"，学习到它们的特征空间表示。
@@ -107,7 +114,3 @@ tags:
 
 ![Our method](/uploads/prompt_method.jpg "Our method")
 
-**准备工作**
-
-
-![overview](/uploads/prompt_learning/image.jpg"Overview")
