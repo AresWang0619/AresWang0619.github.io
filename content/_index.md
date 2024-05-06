@@ -86,18 +86,7 @@ sections:
               * 大模型人类对齐
     design:
       columns: '2'
-  - block: collection
-    id: featured
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-          - event
-        featured_only: true
-    design:
-      columns: '2'
-      view: card
+  
   - block: collection
     content:
       title: Recent Publications
@@ -112,52 +101,18 @@ sections:
     design:
       columns: '2'
       view: citation
-  
-  - block: accomplishments
+  - block: collection
+    id: featured
     content:
-      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-      title: 'Accomplish&shy;ments'
-      subtitle:
-      # Date format: https://docs.hugoblox.com/customization/#date-format
-      date_format: Jan 2006
-      # Accomplishments.
-      #   Add/remove as many `item` blocks below as you like.
-      #   `title`, `organization`, and `date_start` are the required parameters.
-      #   Leave other parameters empty if not required.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - certificate_url: ''
-          date_end: '2023-05-02'
-          date_start: '2023-05-01'
-          description: ''
-          icon: medal
-          icon_pack: fas
-          # organization: Coursera
-          # organization_url: https://www.coursera.org
-          title: 全国大学生英语竞赛 | 全国二等奖
-          url: ''
-        - certificate_url: ''
-          date_end: '2023-06-02'
-          date_start: '2023-06-01'
-          description: ''
-          icon: medal
-          icon_pack: fas
-          # organization: edX
-          # organization_url: https://www.edx.org
-          title: 中国人工智能及智能大赛 | 全国二等奖
-          url: ''
-        - certificate_url: ''
-          date_end: '2023-05-02'
-          date_start: '2023-05-01'
-          description: ''
-          icon: trophy
-          icon_pack: fas
-          # organization: DataCamp
-          # organization_url: https://www.datacamp.com
-          title: '中国人工智能及智能大赛 | 北京市一等奖'
-          url: ''
+      title: Featured Publications
+      filters:
+        folders:
+          - publication
+          - event
+        featured_only: true
     design:
       columns: '2'
+      view: card
   - block: collection
     id: posts
     content:
@@ -223,6 +178,52 @@ sections:
     design:
       columns: '2'
       view: compact
+  
+  - block: accomplishments
+    content:
+      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
+      title: 'Accomplish&shy;ments'
+      subtitle:
+      # Date format: https://docs.hugoblox.com/customization/#date-format
+      date_format: Jan 2006
+      # Accomplishments.
+      #   Add/remove as many `item` blocks below as you like.
+      #   `title`, `organization`, and `date_start` are the required parameters.
+      #   Leave other parameters empty if not required.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+        - certificate_url: ''
+          date_end: '2023-05-02'
+          date_start: '2023-05-01'
+          description: ''
+          icon: medal
+          icon_pack: fas
+          # organization: Coursera
+          # organization_url: https://www.coursera.org
+          title: 全国大学生英语竞赛 | 全国二等奖
+          url: ''
+        - certificate_url: ''
+          date_end: '2023-06-02'
+          date_start: '2023-06-01'
+          description: ''
+          icon: medal
+          icon_pack: fas
+          # organization: edX
+          # organization_url: https://www.edx.org
+          title: 中国人工智能及智能大赛 | 全国二等奖
+          url: ''
+        - certificate_url: ''
+          date_end: '2023-05-02'
+          date_start: '2023-05-01'
+          description: ''
+          icon: trophy
+          icon_pack: fas
+          # organization: DataCamp
+          # organization_url: https://www.datacamp.com
+          title: '中国人工智能及智能大赛 | 北京市一等奖'
+          url: ''
+    design:
+      columns: '2'
   - block: skills
     content:
       title: Skills
