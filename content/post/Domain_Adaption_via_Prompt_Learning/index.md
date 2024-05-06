@@ -38,16 +38,21 @@ tags:
 
 ---
 
-**title:**Domain Adaptation via Prompt Learning
+**title:** 
+Domain Adaptation via Prompt Learning
 
-**institute:**Department of Automation, BNRist, Tsinghua University 2Beijing Institute of Technology
+**institute:** 
+Department of Automation, BNRist, Tsinghua University 2Beijing Institute of Technology
 3Carnegie Mellon University 4Beijing Academy of Artificial Intelligence
 
-**authors:**C Ge, R Huang, M Xie, Z Lai, S Song, S Li, G Huang
+**authors:** 
+C Ge, R Huang, M Xie, Z Lai, S Song, S Li, G Huang
 
-**Date:**2022.2.14
+**Date:** 
+2022.2.14
 
-**link:** https://arxiv.org/abs/2202.06687
+**link:** 
+https://arxiv.org/abs/2202.06687
 
 
 ## 首先我们要知道：
