@@ -41,7 +41,7 @@ tags:
 
 **title:** Prompt Vision Transformer for Domain Generalization
 
-**institute:**National University of Singapore ,Berkeley
+**institute:** National University of Singapore ,Berkeley
 
 **authors:**  Zangwei Zheng, Xiangyu Yue Wang Kai Yang You
 
@@ -49,4 +49,3 @@ tags:
 
 **link:** https://arxiv.org/pdf/2208.08914
 
-![alt text](image.png)
