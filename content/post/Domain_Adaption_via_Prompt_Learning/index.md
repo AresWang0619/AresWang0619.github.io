@@ -1,5 +1,5 @@
 ---
-title: 论文解读 |Domain Adaptation via Prompt Learning
+title: 论文阅读 |Domain Adaptation via Prompt Learning
 subtitle: 
 # Summary for listings and search engines
 summary: 2024/2/26 论文阅读

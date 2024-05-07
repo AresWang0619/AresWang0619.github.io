@@ -1,8 +1,8 @@
 ---
-title: 论文解读 |Can Language Models Solve Graph Problems in Natural Language? 
+title: 论文阅读 |Can Language Models Solve Graph Problems in Natural Language? 
 subtitle: 2024/3/8 论文阅读
 # Summary for listings and search engines
-summary: 大模型论文阅读
+summary: LLMs论文阅读
 # Link this post with a project
 # projects: []
 
