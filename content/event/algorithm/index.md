@@ -37,6 +37,7 @@ image:
 
 ---
 ## 目录
+- [高精度](#高精度)
 - [区间更新:差分算法](#区间更新差分算法)
 - [二分查找](#二分查找)
 - [前缀和](#前缀和)
@@ -91,7 +92,42 @@ image:
         <li><a href="#盛水最多的容器">盛水最多的容器</a></li>
     </ul>
 </div> -->
-
+> ## 高精度 <a name="高精度"></a>
+> 
+> **1. 高精度加法**
+>    用数组来存储大整数，0存储个位，方便最后一位要进位的时候进位。用t来存储进位。
+>    采用C++中的vector来代表存储，因为vector有push_back以及size函数。
+>    
+>    **Key part:**
+>    ```cpp
+>    #include<vector> //头文件要引入
+>    vector<int> A,B;// A，B向量的声明
+>    auto c;// 用于存储计算结果，auto可以让编译器根据初始化表达式的类型推断变量类型，即可以省略变量类型。
+>    
+>    //将输入的字符串a,b转换为vector
+>    for(int i=A.size()-1;i>=0;i--) A.push_back(a[i]-'0');
+>    for(int i=B.size()-1;i>=0;i--) B.push_back(b[i]-'0');
+>    
+>    //函数
+>    vector<int> add (vector<int> &A,vector<int> &B){
+>      vector<int> c;
+>      int t=0;
+>      for(int i=0;i<A.size()||i<B.size();i++){
+>        if(i<A.size()) t=t+A[i];
+>        if(i<B.size()) t=t+B[i];
+>        c.push_back(t%10);
+>        t=t/10;
+>      }
+>      if(t) c.push_back(1);
+>      return c;
+>    }
+>    ```
+> 
+> 2. 高精度减法
+> 
+> 3. 高精度乘法
+> 
+> 4. 高精度除法
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
 > <u>*适用场景*</u> ：适用于一个区间都要加上/减去一个固定的数字。
