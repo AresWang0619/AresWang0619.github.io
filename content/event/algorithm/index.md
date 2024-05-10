@@ -38,6 +38,8 @@ image:
 ---
 ## 目录
 - [高精度](#高精度)
+  - [高精度加法](#高精度加法)
+  - [高精度减法](#高精度减法)
 - [区间更新:差分算法](#区间更新差分算法)
 - [二分查找](#二分查找)
 - [前缀和](#前缀和)
@@ -92,11 +94,12 @@ image:
         <li><a href="#盛水最多的容器">盛水最多的容器</a></li>
     </ul>
 </div> -->
-> ## 高精度 <a name="高精度"></a>
+ ## 高精度 <a name="高精度"></a>
 > 
-> **1. 高精度加法**
->    用数组来存储大整数，0存储个位，方便最后一位要进位的时候进位。用t来存储进位。
->    采用C++中的vector来代表存储，因为vector有push_back以及size函数。
+>
+> ### 高精度加法 <a name="高精度加法"></a>
+>    1.用数组来存储大整数，0存储个位，方便最后一位要进位的时候进位。用t来存储进位。
+>    2.采用C++中的vector来代表存储，因为vector有push_back以及size函数。
 >    
 >    **Key part:**
 >    ```cpp
@@ -122,9 +125,61 @@ image:
 >      return c;
 >    }
 >    ```
+
+> ### 高精度减法 <a name="高精度减法"></a>
+> 1. 首先要进行一个判断，判断A,B两数的大小，如果A>B,直接进行sub(A,B)，如果A<B,则要输出-（B-A），即-sub(B,A),bool cmp函数用于比较大小，先比较AB的位数，位数相同再从高位开始比较第一个不相同的数字谁大谁小。
+> 2. 进行减法时，如果A_i-B_i-t>=0,则直接减，如果<0,则要进行借位，答案应等于A_i-B_i+10。要注意去除前导0。
+> **Key part:**
+> ```cpp
+> #include<iostream>
+> #include<vector>
+> #include<algorithm>
+> using namespace std;
 > 
-> 2. 高精度减法
+> bool cmp(vector<int> &A,vector<int> &B){
+>   if(A.size()!=B.size()) return A.size()>B.size(); //两个向量长度不等的情况
+>   for(int i=A.size()-1;i>=0;i--){ //如果当两个向量长度相等
+>     if(A[i]!=B[i]) return A[i]>B[i];
+>   }
+>   return true;
+> }
+> vector<int> sub(vector<int> &A,vector<int> &B){
+>   vector<int> c;
+>   
+>   for(int i=0,t=0;i<A.size();i++){
+>       t=A[i]-t;
+>       if(i<B.size()) t=t-B[i];
+>       c.push_back((t+10)%10); //将两种情况整合在一起
+>       if(t<0) t=1; //借位判断
+>       else t=0;
+>   }
+>   while(c.size()>1&&c.back()==0) c.pop_back(); //前导0的去除，直到c只有一位或者0全部被去除停止。
+>   return c;
+> }
 > 
+> int main(){
+>     vector <int> A,B,c;
+>     string a,b;
+>     cin>>a>>b; //string的输入要用cin
+>     for(int i=a.size()-1;i>=0;i--) A.push_back(a[i]-'0');
+>     for(int i=b.size()-1;i>=0;i--) B.push_back(b[i]-'0');
+>     // 两种不同情况下A,B的输入输出
+>     if(cmp(A,B)){
+>         c=sub(A,B);
+>         for(int i=c.size()-1;i>=0;i--){
+>             printf("%d",c[i]);
+>         }
+>     }else{
+>         c=sub(B,A);
+>         printf("-");
+>         for(int i=c.size()-1;i>=0;i--){
+>             printf("%d",c[i]);
+>         }
+>     }
+>     return 0;
+> }
+> ```
+
 > 3. 高精度乘法
 > 
 > 4. 高精度除法
