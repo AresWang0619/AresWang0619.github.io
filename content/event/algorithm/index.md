@@ -40,6 +40,8 @@ image:
 - [高精度](#高精度)
   - [高精度加法](#高精度加法)
   - [高精度减法](#高精度减法)
+  - [高精度乘法](#高精度乘法)
+  - [高精度除法](#高精度除法)
 - [区间更新:差分算法](#区间更新差分算法)
 - [二分查找](#二分查找)
 - [前缀和](#前缀和)
@@ -186,17 +188,63 @@ image:
 > 此处的高精度是一个大整数乘以一个int型整数,与加法模板类似。
 >
 >  **Key part:**
+> ```cpp
 > int t=0;
 > for(int i=0;i<A.size()||t;i++){
 >    if(i<A.size()) t=A[i] *b;
 >    c.push_back(t%10);
 >    t=t/10;
 > }
->
+>```
 
+> ### 高精度除法 <a name="高精度除法"></a>
+> 大整数除以int型整数
 >
->
-> 4. 高精度除法
+> **Key part:**
+> ```cpp
+> #include<iostream>
+> #include<algorithm>
+> #include<vector>
+> 
+> using namespace std;
+> 
+> vector<int> div(vector<int> &A,int b,int &r){ //r是引用，从地址上改变值，方便最后的输出。
+>     vector<int> c;
+>     r=0;
+>     for(int i=A.size()-1;i>=0;i--){
+>         r=r*10+A[i];
+>         c.push_back(r/b);
+>         r=r%b;
+>     }
+>     reverse(c.begin(),c.end()); //reverse保证顺序正确
+>     while(c.size()>1&&c.back()==0) c.pop_back();
+>     return c;
+> } 
+> 
+> int main()
+> {
+>     vector<int> A,c;
+>     string a;
+>     int r,b;
+>     cin>>a>>b;
+> 
+>     
+>     for(int i=a.size()-1;i>=0;i--){
+>         A.push_back(a[i]-'0');
+>     }
+>     
+>     c=div(A,b,r);
+>     for(int i=c.size()-1;i>=0;i--){
+>         printf("%d",c[i]);
+>     
+>     }
+>         cout<<endl<<r<<endl; //要用cout输出
+>     return 0;
+> }
+> ```
+
+
+
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
 > <u>*适用场景*</u> ：适用于一个区间都要加上/减去一个固定的数字。
