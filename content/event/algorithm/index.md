@@ -247,35 +247,113 @@ image:
 
 
 ## 区间更新:差分算法 <a name="区间更新差分算法"></a>
-> <u>*适用场景*</u> ：适用于一个区间都要加上/减去一个固定的数字。
+> <u>适用场景</u>: 适用于一个区间都要加上/减去一个固定的数字。
 >
 > **原理:** 
 > 
-> a_0=0, b_1=a_1=a_0, b_2=a_2-a_1, b_s=a_s-a_{s-1}, b_x=a_x-a_{x-1}, b_{t+1}=a_{t+1}-a_t, b_n=a_n-a_{n-1}
+> $a_0=0$, $b_1=a_1=a_0$, $b_2=a_2-a_1$, $b_s=a_s-a_{s-1}$, $b_x=a_x-a_{x-1}$, $b_{t+1}=a_{t+1}-a_t$, $b_n=a_n-a_{n-1}$
 > 
 >
-> 所以a_1=b_1,a_2=b_1+b_2,a_3=b_1+b_2+b_3...a_n=a_1+a_2+...+a_n
-> 由于要对区间 a_s 到 a_t 之间的 a ,每个都要加 d ,对于 b 相当于只有 b_s 加了 d，b_t+1 多减去了 d ,而其余 b 的大小不变。将区间变化转化为只对新建的b数组中的两 
+> 所以$a_1=b_1$,$a_2=b_1+b_2$,$a_3=b_1+b_2+b_3$...$a_n=b_1+b_2+...+b_n$
+> 由于要对区间 $a_s$ 到 $a_t$ 之间的 $a$，每个都要加 $d$，对于 $b$ 相当于只有 $b_s$ 加了 $d$，$b_{t+1}$ 多减去了 $d$，而其余 $b$ 的大小不变。将区间变化转化为只对新建的 $b$ 数组中的两 
 > 个数字做变化。
 >
 > **Key part:**
-> 构建差分数组（构建前记得开辟数组空间： `memset(b,0,sizeof(b));`）
+> 构建一维差分数组（构建前记得开辟数组空间： `memset(b,0,sizeof(b));`）
 > ```cpp
-> for(int i=1;i<=n;i++){
->   b[s[i]]=b[s[i]]+d;
->   b[t[i]+1]=b[t[i]+1]-d;
+> #include <iostream>
+> 
+> using namespace std;
+> 
+> const int N = 100010;
+> int n, m;
+> int a[N], b[N];
+> 
+> void insert(int l, int r, int c) {
+>     b[l] += c;
+>     b[r + 1] -= c;
 > }
-> ```
-> ps:如果是从原数组直接构建差分数组，for循环要倒序，否则构建会错误。
-> ```cpp
-> for(int i=n+1;i>=1;i--){
->   b[i]=b[i]-b[i-1];
+> 
+> int main() {
+>     scanf("%d%d", &n, &m);
+>     for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
+> 
+>     for (int i = 1; i <= n; i++) insert(i, i, a[i]);
+> 
+>     while (m--) {
+>         int l, r, c;
+>         scanf("%d%d%d", &l, &r, &c);
+>         insert(l, r, c);
+>     }  
+> 
+>     for (int i = 1; i <= n; i++) b[i] += b[i - 1];
+>     for (int i = 1; i <= n; i++) printf("%d ", b[i]);
+> 
+>     return 0;
 > }
 > ```
 >
-> <u>*相关例题*</u> ：
+> **Key part:**
+> 构建二维差分数组,与一维数组相同，关键在于insert函数。
+> ```cpp
+> #include<iostream>
+> #include<cstdio>
+> using namespace std;
+> const int N = 1e3 + 10;
+> int a[N][N], b[N][N];
 >
-> 4262空调：要让一个数组中的所有数字，每次只能选择两个数字进行+1、-1，要让其全减为0。需要的次数即为该差分数组中所有正数的和。
+> void insert(int x1, int y1, int x2, int y2, int c)
+> {
+>     b[x1][y1] += c;
+>     b[x2 + 1][y1] -= c;
+>     b[x1][y2 + 1] -= c;
+>     b[x2 + 1][y2 + 1] += c;
+> }
+> int main()
+> {
+>     int n, m, q;
+>     cin >> n >> m >> q;
+>     for (int i = 1; i <= n; i++)
+>         for (int j = 1; j <= m; j++)
+>             cin >> a[i][j];
+> 
+>     for (int i = 1; i <= n; i++)
+>     {
+>         for (int j = 1; j <= m; j++)
+>         {
+>             insert(i, j, i, j, a[i][j]);      //构建差分数组
+>         }
+>     }
+> 
+>     while (q--)
+>     {
+>         int x1, y1, x2, y2, c;
+>         cin >> x1 >> y1 >> x2 >> y2 >> c;
+>         insert(x1, y1, x2, y2, c);
+>     }
+>     for (int i = 1; i <= n; i++)
+>     {
+>         for (int j = 1; j <= m; j++)
+>         {
+>             b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1];  //二维前缀和
+>         }
+>     }
+>     for (int i = 1; i <= n; i++)
+>     {
+>         for (int j = 1; j <= m; j++)
+>         {
+>             printf("%d ", b[i][j]);
+>         }
+>         printf("\n");
+>     }
+>     return 0;
+> }
+> ```
+>
+> **相关例题**: 
+>
+> 562壁画：用for循环遍历m~n,在此区间内找和max的区间,区间大小为m.
+
 
 ---
 ## 二分查找 <a name="二分查找"></a>
@@ -316,7 +394,8 @@ image:
 
 ---
 ## 前缀和 <a name="前缀和"></a>
-> <u>*适用场景*</u>: 求任意区间内数字的总和。
+> <u>*适用场景*</u>: 求任意区间内数字的总和/或求子矩阵的和（'s[i][j]=s[i-1][j]+s[i][j-1]-s[i-1][j-1]+a[i][j] 
+ ' 最后面积为's[x2][y2]-s[x1-1][y2]-s[x2][y1-1]+s[x1-1][y1-1]'）。
 >
 > **原理:** 
 > 构建前缀和数组
