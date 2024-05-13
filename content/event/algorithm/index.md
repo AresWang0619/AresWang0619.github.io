@@ -99,23 +99,90 @@ image:
     </ul>
 </div> -->
 
- ## 整数离散化 <a name="整数离散化"></a>
+## 整数离散化 <a name="整数离散化"></a>
 > 给出一列数字，在有些情况下，这些数字的值的绝对大小不重要，而相对大小很重要。例如，对一个班级学生的成绩进行排名，此时不关心成绩的绝对值，只需要输出排名，如分数为{95,50,72,21},排名为{1,3,2,4}。
-> <u>离散化</u>就是用数字的相对值替代它们的绝对值。离散化是一种数据处理的技巧，它把分布广而稀疏的数据转换为密集分布，从而能够让算法更快速、更省空间地处理。
-> 例如,{4000,201,11,45,830},数字的分布很稀疏,按大小排序为{5,3,1,2,4},若算法处理的是数字的相对位置问题，那么对后者的处理更容易。
+> <u>离散化</u> 就是用数字的相对值替代它们的绝对值。离散化是一种数据处理的技巧，它把分布广而稀疏的数据转换为密集分布，从而能够让算法更快速、更省空间地处理。
+> 例如，{4000,201,11,45,830}，数字的分布很稀疏，按大小排序为{5,3,1,2,4}，若算法处理的是数字的相对位置问题，那么对后者的处理更容易。
 > 
 > 离散化中存在两个问题：
-> 1. 数组中有重复元素，要进行去重：sort后erase
+> 1. 数组中有重复元素，要进行去重，去除重复的下标：sort后erase
 > 2. 如何算出x离散化后的值是多少：二分查找（第一个>=x的位置）
 > 
 > **例题：区间和**
 > 有一个无限长的数轴，每个坐标上的数字初始都是0，进行n次操作，每次将某一位置上的x加上c，进行m次询问，每次询问含有两个整数l和r，求出区间[l,r] 间所有数字的和。
+> 
+> 离散化（区间内数字较稀疏）+前缀和（求一段区间内数字的和）
+> 
+> **Key part:**
+> ```cpp
+> #include<iostream>
+> #include<vector>
+> #include<algorithm>
+> 
+> using namespace std;
+> 
+> const int N=30010;
+> int a[N],s[N]; //a用于存储离散化后的数组，s用于存储a数组的前缀和
+> vector<int> alls; //存储所有用到的下标：查询的下标（l，r），插入数据的下标 x
+> typedef pair<int,int> PII; //自定义一个向量对来存储查询和添加操作
+> vector<PII> add,query;
+> 
+> int find(int x){
+>     int l=0,r=alls.size()-1;
+>     
+>     while(l<r){
+>         int mid=l+r>>1; 
+>         if(alls[mid]>=x) r=mid;
+>         else l=mid+1;
+>     }
+>     
+>     return r+1;
+> } //二分查找
+> 
+> int main(){
+>     int n,m;
+>     cin>>n>>m;
+>      //输入需要加的位置和数值
+>     for(int i=0;i<n;i++){
+>         int x,c;
+>         scanf("%d%d",&x,&c);
+>         alls.push_back(x);
+>         add.push_back({x,c});
+>         
+>     }
+>     
+>       //输入查询的区间
+>     for(int i=0;i<m;i++){
+>         int l,r;
+>         scanf("%d%d",&l,&r);
+>         alls.push_back(l);
+>         alls.push_back(r);
+>         query.push_back({l,r});
+>     }
+>    // 排序和去重，方便进行离散化
+>     sort(alls.begin(),alls.end());
+>     alls.erase(unique(alls.begin(),alls.end()),alls.end());
+>     
+>      //离散化数组a，加上需要插入的值c
+>     for(auto item: add){ //这里如果报错就改用正常for循环 for(int i=1;i<=alls.size();i++)
+>         int x=find(alls[item.first]);
+>         a[x]=a[x]+all[item.second];
+>         
+>     }
+>     //求前缀和
+>     for(int i=1;i<=alls.size();i++){
+>         s[i]=s[i-1]+a[i];
+>     }
+>     //进行查询，l和r也要进行离散化
+>     for(auto item: query){
+>         int l=find(alls[item.first]),r=find(alls[item.second]);
+>         printf("%d",s[r]-s[l-1]+1);
+>     } 
+>     return 0;
+> }
+> ```
 >
->离散化（区间内数字较稀疏）+前缀和（求一段区间内数字的和）
->    **Key part:**
->
->
->ps: [归并排序例题](#归并排序)：火柴排队中介绍了另一种离散化方法
+> ps: [归并排序例题](#归并排序)：火柴排队中介绍了另一种离散化方法
 
 
  ## 位运算 <a name="位运算"></a>
