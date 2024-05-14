@@ -167,20 +167,22 @@ image:
 >     alls.erase(unique(alls.begin(),alls.end()),alls.end());
 >     
 >      //离散化数组a，加上需要插入的值c
->     for(auto item: add){ //这里如果报错就改用正常for循环 for(int i=1;i<=alls.size();i++)
->         int x=find(alls[item.first]);
->         a[x]=a[x]+all[item.second];
->         
->     }
+>     for(int i = 0; i < add.size(); i++){
+>    int x = find(add[i].first);
+>    a[x] = a[x] + add[i].second;
+> }
+>
 >     //求前缀和
 >     for(int i=1;i<=alls.size();i++){
 >         s[i]=s[i-1]+a[i];
 >     }
 >     //进行查询，l和r也要进行离散化
->     for(auto item: query){
->         int l=find(alls[item.first]),r=find(alls[item.second]);
->         printf("%d",s[r]-s[l-1]+1);
->     } 
+>    
+>      for(int i = 0; i < query.size(); i++){
+>          int l = find(query[i].first), r = find(query[i].second);
+>          printf("%d", s[r] - s[l - 1]);
+>      }
+>
 >     return 0;
 > }
 > ```
