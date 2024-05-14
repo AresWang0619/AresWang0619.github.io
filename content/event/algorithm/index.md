@@ -182,6 +182,18 @@ image:
 >          int l = find(query[i].first), r = find(query[i].second);
 >          printf("%d", s[r] - s[l - 1]);
 >      }
+>    //或者
+>	
+>	  /*for(auto item:add){
+>	     int x=find(item.first);
+>	      a[x]=a[x]+item.second;
+> 	}
+>
+>   for(auto item:query){
+>      int l=find(item.first),r=find(item.second);
+>     printf("%d",s[r]-s[l-1]);
+> }	
+> */
 >
 >     return 0;
 > }
