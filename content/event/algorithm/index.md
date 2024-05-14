@@ -37,6 +37,7 @@ image:
 
 ---
 ## 目录
+- [区间和并](#区间和并)
 - [整数离散化](#整数离散化)
 - [位运算](#位运算)
 - [高精度](#高精度)
@@ -98,6 +99,65 @@ image:
         <li><a href="#盛水最多的容器">盛水最多的容器</a></li>
     </ul>
 </div> -->
+
+ ## 区间和并 <a name="区间和并"></a>
+> 输入n个区间，合并有交集的区间（端点交集也算），输出合并后还有几个区间。
+> 1. 先按照区间左端点排序
+> 2. 扫描整个区间，进行合并
+> 
+> 此时，总共有三种情况：
+> - 区间包含在区间内（什么都不用做）
+> - 区间右端点ed超出区间
+> - 区间完全无交集
+>
+> **Key part:**
+>
+> ```cpp
+> #include<iostream>
+> #include<vector>
+> #include<algorithm>
+> using namespace std;
+> 
+> typedef pair<int,int> PII;
+> 
+> const int N=10010;
+> 
+> vector<PII> segs;
+> 
+> void merge(vector<PII> &segs){
+>     vector<PII> res;
+>     int st=-2e9,ed=-2e9; //初始化区间为无穷，便于比较
+>     
+>     for(auto seg: segs){ //遍历输入的区间对
+>         if(ed<seg.first){  //如果原始的区间右端点小于新输入的区间左端点，即交集为空
+>             if(st!=-2e9) res.push_back({st,ed}); //排除初始化空间后放入结果res
+>             st=seg.first,ed=seg.second; //更新区间端点为新的区间
+>             
+>         }else ed=max(ed,seg.second); //否则，将右端点更新为最大的右端点
+>     }
+>     
+>     if(st!=-2e9) res.push_back({st,ed}); //防止输入的区间是空的，或者只有一个
+>     
+>     segs=res;
+> }
+> 
+> int main(){
+>     int n;
+>     cin>>n;
+>     for(int i=0;i<n;i++){
+>         int l,r;
+>         cin>>l>>r;
+>         segs.push_back({l,r});
+>     }
+>     
+>     sort(segs.begin(),segs.end()); //排序
+>     merge(segs);
+>     printf("%d",segs.size());
+>     return 0;
+> }
+> ```
+
+
 
 ## 整数离散化 <a name="整数离散化"></a>
 > 给出一列数字，在有些情况下，这些数字的值的绝对大小不重要，而相对大小很重要。例如，对一个班级学生的成绩进行排名，此时不关心成绩的绝对值，只需要输出排名，如分数为{95,50,72,21},排名为{1,3,2,4}。
@@ -797,6 +857,7 @@ end())`。
 
 
 >tips:
+>
 > 1.malloc: 初始值不确定 `int* a=(int*)malloc(numsize*sizeof(int))`
 >
 > 2.calloc: 初始值全为0 `int* a=(int*)calloc(numsize+1,sizeof(int))`
