@@ -54,6 +54,7 @@ image:
   - [快速排序](#快速排序)
   - [归并排序](#归并排序)
 - [链表专场](#链表专场)
+  - [常见链表操作](#常见链表操作)
   - [反转链表](#反转链表)
   - [回文链表](#回文链表)
   - [判断是否是环形链表](#判断是否是环形链表)
@@ -834,7 +835,77 @@ end())`。
 ---
 
 ## 链表专场 <a name="链表专场"></a>
-> 
+> ### 常见链表操作：增、删 <a name="常见链表操作"></a>
+> ![链表常见操作](image-1.png)
+> 用数组来模拟链表
+>
+> 即：1. 将x插入到头节点后 2.将x插入下标为k的点的后面 3. 将下标是k的后面的点删除
+>
+> ```cpp
+> #include<iostream>
+> #include<algorithm>
+> #include<vector>
+> using namespace std;
+> const int N=10010;
+> int head,e[N],ne[N],idx; //head代表头节点，e代表节点的value，ne表示节点下一个所指向的节点
+>
+> //初始化
+> void init(){
+>     head=-1;
+>     idx=0;
+> }
+>
+> // 将下标是k的后面的点删除
+> void remove(int k) 
+> {
+>     ne[k]=ne[ne[k]]; //将指针指向k节点所指的节点的下一个节点
+> }
+>
+> //将x插入到头节点后
+> void add_to_head(int x){
+>     e[idx]=x; //存好x的值
+>     ne[idx]=head; //将当前指针指向head所指向的节点
+>     head=idx; //将头节点的指针指向当前
+>     idx++; //插入完成，移动指针
+> }
+>
+> //将x插入下标为k的点的后面 
+> void add(int k,int x){
+>     e[idx]=x;
+>     ne[idx]=ne[k];
+>     ne[k]=idx;
+>     idx++;
+> }
+>
+> int main()
+> {
+>     int m;
+>     cin>>m;
+>     init();
+>     while(m--){
+>         int k,x;
+>         char op;
+>         cin>>op;
+>         if(op=='H'){
+>             cin>>x;
+>             add_to_head(x);
+>         }else if(op=='D'){
+>             cin>>k;
+>             if(!k) head=ne[head]; //删除头节点，将头节点的指针指向头节点的下一个节点
+>             remove(k-1); //注意删除第k个节点，但是下标是k-1
+>         }else{
+>             cin>>k>>x;
+>             add(k-1,x);
+>         }
+>     }
+>     
+>     for(int i=head;i!=-1;i=ne[i]) cout<<e[i]<<' '; //当不为头节点时，就一直指向下一个节点
+>     cout<<endl;
+>     return 0;
+> }
+> ```
+
+
 > ### 反转链表 <a name="反转链表"></a>
 >
 >  <u>头插法</u>: 
