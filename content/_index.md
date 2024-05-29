@@ -63,14 +63,14 @@ sections:
           date_start: '2022-09-01'
           date_end: '2023-03-01'
           description: 对抗样本，进化算法。
-        - title: 中国人民大学数据工程与知识工程教育部重点实验室 
-          company: 客座学生
-          company_url: ''
-          company_logo: org-gc
-          location: Beijing
-          date_start: '2024-02-15'
-          date_end: '2024-04-09'
-          description: 参与实验室科研项目：基于 Prompt Learning +U-net 的跨域轻量级眼底血管分割模型。
+        # - title: 中国人民大学数据工程与知识工程教育部重点实验室 
+        #   company: 客座学生
+        #   company_url: ''
+        #   company_logo: org-gc
+        #   location: Beijing
+        #   date_start: '2024-02-15'
+        #   date_end: '2024-04-09'
+        #   description: 参与实验室科研项目：基于 Prompt Learning +U-net 的跨域轻量级眼底血管分割模型。
         - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
@@ -83,7 +83,7 @@ sections:
 
               * 中文大数据系统数据置信度评估
               * 人体姿态识别
-              * 大模型人类对齐
+              * 基于大模型的智能药箱
     design:
       columns: '2'
   
