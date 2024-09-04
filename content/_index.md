@@ -62,7 +62,7 @@ sections:
           location: Beijing
           date_start: '2022-09-01'
           date_end: '2023-03-01'
-          description: 对抗样本，进化算法。
+          description: 对抗攻击，进化算法，AI安全。
         # - title: 中国人民大学数据工程与知识工程教育部重点实验室 
         #   company: 客座学生
         #   company_url: ''
@@ -83,7 +83,7 @@ sections:
 
               * 中文大数据系统数据置信度评估
               * 人体姿态识别
-              * 基于大模型的智能药箱
+              * 基于LLM的智能药箱
     design:
       columns: '2'
   
@@ -210,7 +210,7 @@ sections:
           icon_pack: fas
           # organization: edX
           # organization_url: https://www.edx.org
-          title: 中国人工智能及智能大赛 | 全国二等奖
+          title: 中国机器人及人工智能大赛 | 全国二等奖
           url: ''
         - certificate_url: ''
           date_end: '2023-05-02'
@@ -220,7 +220,7 @@ sections:
           icon_pack: fas
           # organization: DataCamp
           # organization_url: https://www.datacamp.com
-          title: '中国人工智能及智能大赛 | 北京市一等奖'
+          title: '中国机器人及人工智能大赛  | 北京市一等奖'
           url: ''
         - certificate_url: ''
           date_end: '2023-05-06'
