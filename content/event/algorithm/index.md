@@ -25,7 +25,7 @@ date: '2024-04-21T21:25:00Z'
 # publishDate: '2021-07-01T00:00:00Z'
 
 authors: [Ares]
-tags: [Algorithm learning]
+tags: [Algorithm]
 
 # Is this a featured talk? (true/false)
 featured: True
