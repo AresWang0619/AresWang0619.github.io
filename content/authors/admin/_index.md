@@ -20,11 +20,11 @@ role: Student.
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: NCUT
-    url: https://www.ncut.edu.cn/
+  - name: Xiamen University
+    url: https://iai.xmu.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Hi! My name is Wang Yiming. I'm currently a studen in NCUT major in AI.
+bio: Hi, my name is Wang Yiming. I am currently a graduate student at the Xiamen University Institute of Artificial Intelligence.
 
 # Interests to show in About widget
 interests:
@@ -38,13 +38,9 @@ education:
     - course: Undergraduate student majoring in AI
       institution: North China University of Technology.
       year: 2021-2025
-    # - course: MEng in Artificial Intelligence
-    #   institution: Massachusetts Institute of Technology
-    #   year: 2009
-    # - course: BSc in Artificial Intelligence
-    #   institution: Massachusetts Institute of Technology
-    #   year: 2008
-
+    - course: Master's student majoring in AI
+      institution: Institute of Artificial Intelligence, Xiamen University
+      year: 2025-present
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 skills:
