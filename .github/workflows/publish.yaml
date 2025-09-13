@@ -44,6 +44,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true   # 关键：自动启用并配置 Pages（Source=GitHub Actions）
 
       - name: Build with Hugo
         env:
