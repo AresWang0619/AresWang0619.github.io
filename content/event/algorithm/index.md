@@ -13,7 +13,7 @@ event_url: https://leetcode.cn/u/ares-na4/
 #   country: United States
 
 summary: C/C++/Python 算法学习合集
-abstract: '算法学习小tips'
+abstract: '一些算法学习小tips'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
