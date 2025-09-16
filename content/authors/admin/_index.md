@@ -24,7 +24,7 @@ organizations:
     url: https://iai.xmu.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Hi, my name is Wang Yiming. I am currently a graduate student at the Xiamen University Institute of Artificial Intelligence.
+bio: Hi, my name is Wang Yiming. I am currently a graduate student at the Xiamen University, Institute of Artificial Intelligence.
 
 # Interests to show in About widget
 interests:

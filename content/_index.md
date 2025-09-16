@@ -55,6 +55,14 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: AI工程师实习生
+          company: 搜狐畅游
+          company_url: ''
+          company_logo: org-gc
+          location: Beijing
+          date_start: '2024-11-12'
+          date_end: '2024-12-31'
+          description: ComfyUI工作流搭建。
         - title: 大规模流数据集成与分析北京市重点实验室 
           company: 客座学生
           company_url: ''
@@ -63,14 +71,6 @@ sections:
           date_start: '2022-09-01'
           date_end: '2023-03-01'
           description: 对抗攻击，进化算法，AI安全。
-        # - title: 中国人民大学数据工程与知识工程教育部重点实验室 
-        #   company: 客座学生
-        #   company_url: ''
-        #   company_logo: org-gc
-        #   location: Beijing
-        #   date_start: '2024-02-15'
-        #   date_end: '2024-04-09'
-        #   description: 参与实验室科研项目：基于 Prompt Learning +U-net 的跨域轻量级眼底血管分割模型。
         - title:  国家级大创
           company: 智能助老服务机器人的研究与实现 | 第二负责人
           company_url: ''
