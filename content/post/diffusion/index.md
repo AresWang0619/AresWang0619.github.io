@@ -14,7 +14,7 @@ image:
 
 authors:
   - Ares
-  
+date: 2025-09-18
 
 tags:
   - 论文阅读
@@ -72,17 +72,18 @@ tags:
 第二条线是 Tasks，也就是应用的任务/数据模态分类。主要包括四种：图像异常检测、时间序列异常检测、视频异常检测和多模态异常检测。
 
 ![alt text](fig1.png)
+
 ---
 ## Methodologies
-![alt text](image-3.png)
+
 
 本文将基于扩散模型的异常检测方法分为三大类：  
 - **重建式**：看模型能否成功还原输入  
 - **密度式**：看样本在正常分布中是否罕见  
 - **混合式**：结合重建和密度，两者互补  
 
-1. **Reconstruction-based Methods**  
-
+### Reconstruction-based Methods
+![alt text](image-3.png)
 **(a) Basic reconstruction（基础重建）** 
 - 思路：  
   将图像逐步加噪 → 变成纯噪声 → 用扩散模型去噪还原 → 对比原图与重建图差异。  
@@ -99,8 +100,8 @@ tags:
 - 好处：避免模型把异常也修得很正常；  
   条件引导下，模型专注还原正常部分，保留异常 → 便于检测。  
 
-2. **Density-based Methods**  
-
+### Density-based Methods
+![alt text](image-2.png)
 **(a) 分数函数打分**  
 - 将样本加噪后送入扩散模型前向过程；  
 - 用分数网络估计其“分布梯度” → 判断它是否处于正常分布范围；  
@@ -111,7 +112,7 @@ tags:
 - 正常样本 → 很快对齐；  
 - 异常样本 → 需要更多步才能靠拢。  
 
-3. **Hybrid-based Methods** 
+### Hybrid-based Methods
 结合重建误差与密度估计，互相补充。  
 - 重建式缺点：有时会把异常“修太好” → 漏检。  
 - 密度式缺点：在高维复杂数据中不稳定。  
