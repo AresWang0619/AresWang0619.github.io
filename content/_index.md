@@ -104,7 +104,7 @@ sections:
   - block: collection
     id: featured
     content:
-      title: Featured Publications
+      title: Featured posts
       filters:
         folders:
           - publication
